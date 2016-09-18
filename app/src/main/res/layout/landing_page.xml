@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/img24h"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="bottom"
+    android:baselineAligned="true">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_landing"
+            android:id="@+id/btn_landing"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:background="#c6c3c3"
+            android:textColor="#302f2f"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
