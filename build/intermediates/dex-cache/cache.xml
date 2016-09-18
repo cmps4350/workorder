@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="17a9fd6f0cd49aa5deaaa61f2815d76938403c8e">
+        <dex dex="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_8d71de1549df196591c151281b1c03748e0f75b4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.1.1_1d7119c5b05246501ecb48d74dc267ebfc848d96\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_0d6b4332296e1524d29bd9332e54de863d816d30\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_fec5741b7a5fd1b1b7c61b584dab4ba6d8e78ade\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_c64ea336c84720d0999b1892c0821dd23d6e4c58\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="fb2384cfe2e274f54511f268089bf69f45471e87">
+        <dex dex="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_fc2f92f45b5cec22419720faaa879f3be7502990\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\exploded-aar\com.mcxiaoke.volley\library-aar\1.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
+        <dex dex="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mcxiaoke.volley-library-aar-1.0.0_88d0a6d496f38795acbbbae754613c573c6dd856\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Ponism\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_cce9241a8c8102ead1e45b9696583f3dca8b2e18\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.1.1_b5f8c91452b60a348b2f04dbcba0421cc7b7eb28\classes.dex" />
+    </item>
+
+</items>
