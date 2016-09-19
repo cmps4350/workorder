@@ -23,7 +23,8 @@
             android:text="@string/btn_newwo"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:onClick="setContentView" />
 
         <Button
             android:id="@+id/btnViewWorkOrder"

@@ -2,67 +2,67 @@
 <items version="2" >
 
     <item
-        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="0b2aa0faca38cb56cf5385b9c2cf23a7ed6bca3e">
-        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/pre-dexed/debug/instant-run_b70182301eef5d223d48f9ef8c76a8ae1caca38e.jar" />
-    </item>
-    <item
-        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.1.1_a50cfd17a6e2cdabf487e00c6b66956af71859d1.jar" />
-    </item>
-    <item
-        jar="/Users/quypng/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jar="/Users/kevinjenkin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1_51f7d2a2ddc802c1a21f687c4cad9f9482760dd6.jar" />
+        <dex dex="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_99426d8f02b01c21514502776c408b6da81c6161/classes.dex" />
     </item>
     <item
-        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jar="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_c6ec788ec46f120b87be6bd53ee2ff93ca2819cc.jar" />
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_ebf7b506f0d5fe4f2679fb6589de70d5d68f2a5b/classes.dex" />
     </item>
     <item
-        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.1.1_162174a6d1c98ef8011bb865a1db9eb85989e85a.jar" />
-    </item>
-    <item
-        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.0/jars/classes.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
-        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/pre-dexed/debug/com.mcxiaoke.volley-library-aar-1.0.0_87583a12e5c050afa2fb5653eedaa1614831f775.jar" />
-    </item>
-    <item
-        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="true"
-        revision="23.0.2"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_c5e3a6615a99a52e1802b2ecc849bd5fd4f5ca0f.jar" />
-    </item>
-    <item
-        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jar="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
         sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.1.1_e7d3c1ec603385b61c35a541d6678d35b29be0eb.jar" />
+        <dex dex="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_d097e8c380034abf76d2027dad12f482493548d0/classes.dex" />
     </item>
     <item
-        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.0/jars/classes.jar"
         jumboMode="true"
         revision="23.0.2"
-        sha1="520550cc290be7f2f81ca7a9193ca6b590f7fdd1">
-        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_538aef7498e126b822970132bd2dd0a914f6bc02.jar" />
+        sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
+        <dex dex="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mcxiaoke.volley-library-aar-1.0.0_4dd89ac956d375eaba152868283897e176b99354/classes.dex" />
+    </item>
+    <item
+        jar="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_4e35990aa7aabf98c9e6ee5af61cdd5dc50d792d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_6e71989fa657e032e097a12baec93e626a05ab22/classes.dex" />
+    </item>
+    <item
+        jar="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_c0b43f1d4022b936a51a7921c4295fce7bd13dc9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="aaa3be6e40d8415df0dc8020fae5f3f7e845c74a">
+        <dex dex="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_a82998fb8963b02a737ff42e1b48c34583b2a9c9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6e60eb6fea7b0022eebbce82e4cacb681280be60">
+        <dex dex="/Users/kevinjenkin/Downloads/WorkOrderApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_143a224d16dc02b81e3ab9c9bc5a27e27ab769cc/classes.dex" />
     </item>
 
 </items>

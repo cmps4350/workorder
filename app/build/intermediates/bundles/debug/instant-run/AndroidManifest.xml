@@ -5,10 +5,17 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="21"
         android:targetSdkVersion="23" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera2.full" />
 
     <application
         name="edu.csub.cs.WorkOrderApp.app.AppController"
@@ -30,17 +37,15 @@
         <activity
             android:name="edu.csub.cs.WorkOrderApp.activity.LoginActivity"
             android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustPan" >
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="edu.csub.cs.WorkOrderApp.activity.RegisterActivity"
             android:launchMode="singleTop"
-            android:windowSoftInputMode="adjustPan" >
-        </activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="edu.csub.cs.WorkOrderApp.activity.MainActivity"
-            android:launchMode="singleTop" >
-        </activity>
+            android:launchMode="singleTop" />
+        <activity android:name="edu.csub.cs.WorkOrderApp.activity.photo" />
     </application>
 
 </manifest>
