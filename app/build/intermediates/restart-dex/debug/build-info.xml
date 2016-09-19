@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <instant-run
-    abi="arm64-v8a,armeabi-v7a,armeabi"
-    api-level="23"
-    density="xxxhdpi"
+    abi="x86,armeabi-v7a"
+    api-level="19"
+    density="xhdpi"
     format="7"
-    timestamp="283031960527928"
-    token="6076117329052491055" >
+    timestamp="3215518481512"
+    token="1107509192562233641" >
 
     <task
         name="javac"
-        duration="942" />
+        duration="820" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="250" />
+        duration="244" />
     <task
         name="verifier"
-        duration="134" />
+        duration="37" />
 
     <artifact
-        location="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\outputs\apk\app-debug.apk"
+        location="/Users/quypng/Desktop/WorkOrderApp/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="283031960527928" >
+    <build timestamp="3215518481512" >
         <artifact
-            location="C:\Users\Ponism\Desktop\WorkOrderApp\app\build\outputs\apk\app-debug.apk"
+            location="/Users/quypng/Desktop/WorkOrderApp/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
 
