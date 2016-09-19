@@ -4,29 +4,29 @@
     api-level="19"
     density="xhdpi"
     format="7"
-    timestamp="3215518481512"
-    token="1107509192562233641" >
+    timestamp="3721884721790"
+    token="2210835851800796504" >
 
     <task
         name="javac"
-        duration="820" />
+        duration="885" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="244" />
+        duration="251" />
     <task
         name="verifier"
-        duration="37" />
+        duration="55" />
 
     <artifact
-        location="/Users/quypng/Desktop/WorkOrderApp/app/build/outputs/apk/app-debug.apk"
+        location="/Users/quypng/Desktop/workorder/app/build/outputs/apk/app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="3215518481512" >
+    <build timestamp="3721884721790" >
         <artifact
-            location="/Users/quypng/Desktop/WorkOrderApp/app/build/outputs/apk/app-debug.apk"
+            location="/Users/quypng/Desktop/workorder/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
 
