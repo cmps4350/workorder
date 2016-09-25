@@ -14,7 +14,8 @@
         android:id="@+id/linearLayout"
         android:paddingBottom="20dp"
         android:layout_below="@+id/iv_camera"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp">
 
         <Spinner
             android:layout_width="fill_parent"
@@ -54,6 +55,14 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@+id/iv_camera"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -80,7 +89,24 @@
         android:layout_height="wrap_content"
         android:text="New Button"
         android:id="@+id/button"
-        android:layout_below="@+id/linearLayout"
+        android:layout_below="@+id/description"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="15dp"
+        android:inputType="text"
+        android:ellipsize="start"
+        android:hint="@string/description"
+        android:layout_below="@+id/linearLayout"
+        android:background="@drawable/border"
+        android:layout_alignParentEnd="true"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp" />
 
 </RelativeLayout>

@@ -16,6 +16,8 @@
     <string name="btn_logout">LOGOUT</string>
     <string name="name">Fullname</string>
     <string name="btn_landing">Login</string>
+    <string name="description">Additional Info</string>
+
 
     <string name="take_picture">Take picture</string>
 </resources>

@@ -24,6 +24,7 @@ import edu.csub.cs.WorkOrderApp.R;
  */
 public class NewWOActivity extends Activity{
 
+    // dummy data
     public static final CharSequence[] BUILDING_OPTIONS  = {"Building A", "Building B", "Building C", "Building D", "Building E", "Building F", "Building G"};
     public static final CharSequence[] AREA_OPTIONS  = {"Track Area", "Pool Area", "Gym", "Locker Area", "Bathroom Area", "Weight", "Room 1", "Room 2"};
     public static final CharSequence[] EQUIPMENT_OPTIONS  = {"Treadmill", "Calf Machine", "Squat Rack", "Pull Up Bar", "Leg Curl Machine", "Leg Press Machine", "Incline"};
@@ -112,6 +113,7 @@ public class NewWOActivity extends Activity{
         if (requestCode == 0 || resultCode == 0) {
             imageView.setImageResource(R.drawable.camera);
         } else {
+            imageView.requestLayout();
             imageView.getLayoutParams().height = 350;
             imageView.getLayoutParams().width = 350;
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);

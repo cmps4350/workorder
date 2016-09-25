@@ -293,6 +293,7 @@
     <string name="btn_register">REGISTER</string>
     <string name="btn_view">VIEW WORK ORDERS</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="description">Additional Info</string>
     <string name="hint_email">Email</string>
     <string name="hint_name">Fullname</string>
     <string name="hint_password">Password</string>

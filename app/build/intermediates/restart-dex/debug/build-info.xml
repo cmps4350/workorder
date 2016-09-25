@@ -4,38 +4,35 @@
     api-level="23"
     density="xxxhdpi"
     format="7"
-    timestamp="513909860098647"
-    token="-790807459923510828"
-    verifier="COMPATIBLE" >
+    timestamp="524623998617042"
+    token="-790807459923510828" >
 
     <task
         name="javac"
-        duration="560" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="353" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="25" />
+        duration="0" />
     <task
         name="verifier"
-        duration="4" />
+        duration="0" />
 
     <artifact
-        location="C:\Users\Ponism\Documents\workorder\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="C:\Users\Ponism\Documents\workorder\app\build\intermediates\res\resources-debug.ap_"
+        type="RESOURCES" />
 
-    <build timestamp="513810014624183" >
+    <build timestamp="524137706597383" >
         <artifact
             location="C:\Users\Ponism\Documents\workorder\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
-    <build
-        timestamp="513909860098647"
-        verifier="COMPATIBLE" >
+    <build timestamp="524623998617042" >
         <artifact
-            location="C:\Users\Ponism\Documents\workorder\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
+            location="C:\Users\Ponism\Documents\workorder\app\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>
