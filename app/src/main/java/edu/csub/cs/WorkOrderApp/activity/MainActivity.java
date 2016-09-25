@@ -65,9 +65,9 @@ public class MainActivity extends Activity {
 
                 public void onClick(View view) {
                     Intent i = new Intent(getApplicationContext(),
-                            photo.class);
+                            NewWOActivity.class);
                     startActivity(i);
-                    finish();
+                    //finish();
                 }
             });
 	}

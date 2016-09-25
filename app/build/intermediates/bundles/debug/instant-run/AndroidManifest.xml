@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
+    //
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera2.full" />
 
@@ -39,13 +39,16 @@
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
         <activity
+            android:name="edu.csub.cs.WorkOrderApp.activity.NewWOActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
             android:name="edu.csub.cs.WorkOrderApp.activity.RegisterActivity"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="edu.csub.cs.WorkOrderApp.activity.MainActivity"
             android:launchMode="singleTop" />
-        <activity android:name="edu.csub.cs.WorkOrderApp.activity.photo" />
     </application>
 
 </manifest>
