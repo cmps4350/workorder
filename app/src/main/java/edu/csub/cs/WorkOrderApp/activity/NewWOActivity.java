@@ -1,23 +1,40 @@
 package edu.csub.cs.WorkOrderApp.activity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 import edu.csub.cs.WorkOrderApp.R;
+import edu.csub.cs.WorkOrderApp.app.AppConfig;
 
 /**
  * Created on 9/24/2016.
@@ -32,13 +49,21 @@ public class NewWOActivity extends Activity{
     public static final CharSequence[] PROBLEM_OPTIONS  = {"Broken Equiments", "Electrical Failure", "Plumbing", "Cosmetic Damages", "Others"};
 
 
-    String image_name;
-    static final int CAM_REQUEST = 1;
-    ImageView imageView;
+    private Uri file_uri;
+    private Bitmap bitmap;
+    private String encode_string;
+    private ProgressDialog pDialog;
+    private String image_name;
+    private static final int CAM_REQUEST = 1;
+    private ImageView imageView;
+    private Button btn_submit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newwo);
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
         imageView = (ImageView)findViewById(R.id.iv_camera);
 
         // setting up spinners
@@ -47,7 +72,7 @@ public class NewWOActivity extends Activity{
         Spinner equipment = (Spinner) findViewById(R.id.spinner_equipment);
         Spinner priority = (Spinner) findViewById(R.id.spinner_priority);
         Spinner problem = (Spinner) findViewById(R.id.spinner_problem);
-
+        btn_submit = (Button) findViewById(R.id.submit_wo);
 
         // setting up adapters
         // Building
@@ -80,6 +105,13 @@ public class NewWOActivity extends Activity{
         dataAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         problem.setAdapter(dataAdapter5);
 
+        btn_submit.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                insert_to_database();
+            }
+
+        });
     }
 
 
@@ -92,7 +124,7 @@ public class NewWOActivity extends Activity{
         Calendar c = Calendar.getInstance();
         System.out.println("Current time => " + c.getTime());
 
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
         String formattedDate = df.format(c.getTime());
 
         image_name = "image_"+formattedDate+".jpg";
@@ -104,7 +136,8 @@ public class NewWOActivity extends Activity{
         //Toast.makeText(NewWOActivity.this, "Test Click on Image", Toast.LENGTH_SHORT).show();
         Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File file = getFile();
-        camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
+        file_uri = Uri.fromFile(file);
+        camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, file_uri);
         startActivityForResult(camera_intent,CAM_REQUEST);
     }
 
@@ -119,7 +152,67 @@ public class NewWOActivity extends Activity{
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             String image_path = "sdcard/workorder_app/" + image_name;
             imageView.setImageDrawable(Drawable.createFromPath(image_path));
-            Toast.makeText(NewWOActivity.this, image_path, Toast.LENGTH_SHORT).show();
+            new Encode_image().execute();
         }
     }
+
+    private class Encode_image extends AsyncTask<Void,Void,Void> {
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            bitmap = BitmapFactory.decodeFile(file_uri.getPath());
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, stream);
+
+            byte[] array = stream.toByteArray();
+            encode_string = Base64.encodeToString(array, Base64.DEFAULT);
+
+            return null;
+        }
+    }
+
+    public void insert_to_database() {
+
+        pDialog.setMessage("Adding New Work Order ...");
+        showDialog();
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                AppConfig.URL_INSERT_WO, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                hideDialog();
+
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                //hideDialog();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<String, String>();
+                map.put("encoded_string", encode_string);
+                map.put("image_name",image_name);
+
+                return map;
+            }
+        };
+        requestQueue.add(strReq);
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
+    }
+
 }

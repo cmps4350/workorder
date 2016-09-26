@@ -4,35 +4,30 @@
     api-level="23"
     density="xxxhdpi"
     format="7"
-    timestamp="524623998617042"
+    timestamp="538225084191891"
     token="-790807459923510828" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="308" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="205" />
     <task
         name="verifier"
-        duration="0" />
+        duration="109" />
 
     <artifact
-        location="C:\Users\Ponism\Documents\workorder\app\build\intermediates\res\resources-debug.ap_"
-        type="RESOURCES" />
+        location="C:\Users\Ponism\Documents\workorder\app\build\outputs\apk\app-debug.apk"
+        type="MAIN" />
 
-    <build timestamp="524137706597383" >
+    <build timestamp="538225084191891" >
         <artifact
             location="C:\Users\Ponism\Documents\workorder\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
-    </build>
-    <build timestamp="524623998617042" >
-        <artifact
-            location="C:\Users\Ponism\Documents\workorder\app\build\intermediates\res\resources-debug.ap_"
-            type="RESOURCES" />
     </build>
 
 </instant-run>

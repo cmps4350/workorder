@@ -87,26 +87,29 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
+        android:text="Submit"
+        android:id="@+id/submit_wo"
         android:layout_below="@+id/description"
         android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/description"
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_height="55dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="15dp"
-        android:inputType="text"
+        android:inputType="textCapSentences|textMultiLine"
         android:ellipsize="start"
         android:hint="@string/description"
         android:layout_below="@+id/linearLayout"
         android:background="@drawable/border"
         android:layout_alignParentEnd="true"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp" />
+        android:paddingTop="2dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="2dp"
+        android:textSize="25dp" />
 
 </RelativeLayout>

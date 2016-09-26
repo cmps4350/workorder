@@ -6,4 +6,6 @@ public class AppConfig {
 
 	// Server user register url
 	public static String URL_REGISTER = "http://5.39.77.29/login_api/register.php";
+
+	public static String URL_INSERT_WO = "http://5.39.77.29/image_api/image_upload.php";
 }

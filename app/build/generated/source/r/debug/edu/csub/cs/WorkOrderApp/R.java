@@ -2245,7 +2245,6 @@ containing a value of this type.
         public static final int btnViewWorkOrder=0x7f0b006f;
         public static final int btn_landing=0x7f0b0088;
         public static final int btn_takepicture=0x7f0b007e;
-        public static final int button=0x7f0b007b;
         public static final int buttonPanel=0x7f0b0044;
         public static final int cancel_action=0x7f0b008a;
         public static final int center=0x7f0b001d;
@@ -2349,6 +2348,7 @@ containing a value of this type.
         public static final int start=0x7f0b0024;
         public static final int status_bar_latest_event_content=0x7f0b008b;
         public static final int submit_area=0x7f0b0065;
+        public static final int submit_wo=0x7f0b007b;
         public static final int tabMode=0x7f0b000d;
         public static final int text=0x7f0b0093;
         public static final int text2=0x7f0b0091;
