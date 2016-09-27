@@ -1,13 +1,17 @@
 package edu.csub.cs.WorkOrderApp.activity;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -57,6 +61,7 @@ public class NewWOActivity extends Activity{
     private static final int CAM_REQUEST = 1;
     private ImageView imageView;
     private Button btn_submit;
+    private static final int MY_REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -132,13 +137,27 @@ public class NewWOActivity extends Activity{
         return image_file;
     }
 
+    @TargetApi(Build.VERSION_CODES.M)
     public void getWorkOrderImage(View view) throws ParseException {
-        //Toast.makeText(NewWOActivity.this, "Test Click on Image", Toast.LENGTH_SHORT).show();
-        Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        File file = getFile();
-        file_uri = Uri.fromFile(file);
-        camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, file_uri);
-        startActivityForResult(camera_intent,CAM_REQUEST);
+        // checking for deny permission once user click "Dont show this again"
+        if (checkSelfPermission(Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA},
+                    MY_REQUEST_CODE);
+        } else {
+            Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            File file = getFile();
+            file_uri = Uri.fromFile(file);
+            camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, file_uri);
+            startActivityForResult(camera_intent, CAM_REQUEST);
+        }
+
+        if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    MY_REQUEST_CODE);
+        }
     }
 
     @Override
