@@ -30,7 +30,8 @@ import edu.csub.cs.WorkOrderApp.helper.SessionManager;
 import edu.csub.cs.WorkOrderApp.R;
 import edu.csub.cs.WorkOrderApp.app.AppController;
 
-//testing -- kevin
+//added comment
+
 public class LoginActivity extends Activity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnLogin;
