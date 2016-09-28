@@ -13,7 +13,7 @@
         android:orientation="vertical"
         android:id="@+id/linearLayout"
         android:paddingBottom="20dp"
-        android:layout_below="@+id/iv_camera"
+        android:layout_below="@+id/iv_camera2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp">
 
@@ -59,30 +59,9 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray"
-        android:layout_below="@+id/iv_camera"
+        android:layout_below="@+id/iv_camera2"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/iv_camera"
-        android:text="@string/welcome"
-        android:src="@drawable/camera"
-        android:textSize="20dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="getWorkOrderImage" />
-
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:id="@+id/iv_display"
-        android:text="@string/welcome"
-        android:textSize="20dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="getWorkOrderImage" />
 
     <Button
         android:layout_width="wrap_content"
@@ -110,6 +89,37 @@
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="2dp"
-        android:textSize="25dp" />
+        android:textSize="15dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/iv_camera2"
+        android:src="@drawable/camera"
+        android:textSize="20dp"
+        android:onClick="getWorkOrderImage"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/iv_camera3"
+        android:textSize="20dp"
+        android:onClick="getWorkOrderImage"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/iv_camera2" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/iv_camera1"
+        android:text="@string/welcome"
+        android:textSize="20dp"
+        android:onClick="getWorkOrderImage"
+        android:layout_alignBottom="@+id/view2"
+        android:layout_toStartOf="@+id/iv_camera2" />
 
 </RelativeLayout>

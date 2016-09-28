@@ -3,7 +3,9 @@ package edu.csub.cs.WorkOrderApp.activity;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -20,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -40,6 +43,9 @@ import java.util.Map;
 import edu.csub.cs.WorkOrderApp.R;
 import edu.csub.cs.WorkOrderApp.app.AppConfig;
 
+import static edu.csub.cs.WorkOrderApp.R.drawable.camera;
+import static edu.csub.cs.WorkOrderApp.R.drawable.plus;
+
 /**
  * Created on 9/24/2016.
  */
@@ -55,21 +61,27 @@ public class NewWOActivity extends Activity{
 
     private Uri file_uri;
     private Bitmap bitmap;
-    private String encode_string;
+    private static String[] encode_string;
     private ProgressDialog pDialog;
-    private String image_name;
+    private static String[] image_name;
     private static final int CAM_REQUEST = 1;
-    private ImageView imageView;
+    private ImageView imageView1,imageView2,imageView3;
     private Button btn_submit;
     private static final int MY_REQUEST_CODE = 1;
-
+    private int img_count = 0;
+    private int img_pos = 0;
+    private int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newwo);
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
-        imageView = (ImageView)findViewById(R.id.iv_camera);
+        imageView1 = (ImageView)findViewById(R.id.iv_camera1);
+        imageView2 = (ImageView)findViewById(R.id.iv_camera2);
+        imageView3 = (ImageView)findViewById(R.id.iv_camera3);
+        encode_string = new String[3];
+        image_name = new String[3];
 
         // setting up spinners
         Spinner building = (Spinner) findViewById(R.id.spinner_building);
@@ -117,9 +129,159 @@ public class NewWOActivity extends Activity{
             }
 
         });
+
+
+        imageView1.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                try {
+                    img_pos = getImgPos(1);
+                    getWorkOrderImage(view, 1);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+
+        imageView2.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                try {
+                    img_pos = getImgPos(2);
+                    getWorkOrderImage(view, 2);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+
+        imageView3.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+                try {
+                    img_pos = getImgPos(3);
+                    getWorkOrderImage(view, 3);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+
+        imageView1.setOnLongClickListener(new View.OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View view) {
+                imageView1.setTag(plus);
+                Object tag2 = imageView1.getTag();
+
+                if (imageView1.getDrawable() != null ) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(NewWOActivity.this);
+                    builder.setMessage("Delete the image?")
+                            .setCancelable(false)
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // to remove image
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                    return false;
+                }
+                return false;
+            }
+        });
+
+        imageView2.setOnLongClickListener(new View.OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View view) {
+                imageView2.setTag(camera);
+                Object tag = imageView2.getTag();
+                imageView2.setTag(plus);
+                Object tag2 = imageView2.getTag();
+                int camera = R.drawable.camera;
+                int plus = R.drawable.plus;
+
+                if (imageView2.getDrawable() != null && ((Integer)tag).intValue() != camera &&
+                        ((Integer)tag2).intValue() != plus) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(NewWOActivity.this);
+                    builder.setMessage("Delete the image?")
+                            .setCancelable(false)
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // to remove image
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                    return false;
+                }
+                return false;
+            }
+
+        });
+
+        imageView3.setOnLongClickListener(new View.OnLongClickListener() {
+
+            @Override
+            public boolean onLongClick(View view) {
+                imageView3.setTag(plus);
+                Object tag2 = imageView3.getTag();
+
+                if (imageView3.getDrawable() != null ) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(NewWOActivity.this);
+                    builder.setMessage("Delete the image?")
+                            .setCancelable(false)
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // to remove image
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                    return false;
+                }
+                return false;
+            }
+        });
     }
 
-
+    private int getImgPos(int a) {
+        if (img_count == 0 && a >= 1 && a <=3)
+            return 1;
+        if (img_count == 1 && a == 1)
+            return 1;
+        if (img_count == 1 && (a == 2 || a ==3))
+            return 2;
+        if (img_count == 2 && a == 1)
+            return 1;
+        if (img_count == 2 && a == 2)
+            return 2;
+        if (img_count == 2 && a == 3)
+            return 3;
+        if (img_count == 3)
+            return a;
+        return 0;
+    }
+    // return the file the be write
     private File getFile() throws ParseException {
         File folder = new File("sdcard/workorder_app");
         if (!folder.exists()) {
@@ -132,13 +294,13 @@ public class NewWOActivity extends Activity{
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
         String formattedDate = df.format(c.getTime());
 
-        image_name = "image_"+formattedDate+".jpg";
-        File image_file = new File(folder,image_name);
+        image_name[img_pos-1] = "image_"+formattedDate+".jpg";
+        File image_file = new File(folder,image_name[img_pos-1]);
         return image_file;
     }
 
     @TargetApi(Build.VERSION_CODES.M)
-    public void getWorkOrderImage(View view) throws ParseException {
+    public void getWorkOrderImage(View view, int pos) throws ParseException {
         // checking for deny permission once user click "Dont show this again"
         if (checkSelfPermission(Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
@@ -163,18 +325,66 @@ public class NewWOActivity extends Activity{
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 0 || resultCode == 0) {
-            imageView.setImageResource(R.drawable.camera);
+            imageView2.setTag(R.drawable.camera);
+            Object tag = imageView2.getTag();
+            int camera = R.drawable.camera;
+            if (((Integer)tag).intValue() != camera) {
+                imageView2.setImageResource(camera);
+            }
+
         } else {
-            imageView.requestLayout();
-            imageView.getLayoutParams().height = 350;
-            imageView.getLayoutParams().width = 350;
-            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            String image_path = "sdcard/workorder_app/" + image_name;
-            imageView.setImageDrawable(Drawable.createFromPath(image_path));
+            imageView1.setScaleType(ImageView.ScaleType.FIT_XY);
+            imageView2.setScaleType(ImageView.ScaleType.FIT_XY);
+            imageView3.setScaleType(ImageView.ScaleType.FIT_XY);
+            String image_path = "sdcard/workorder_app/" + image_name[img_pos-1];
+
+            // cases to test for position of imageview clicked
+            // if image count is 0, images will be filled left to right
+            // if image count is more than 3, then user wants to replace image. We must check
+            // the correct image position that the user clicked.
+            switch (img_pos) {
+                case 1:
+                    imageView1.setImageDrawable(Drawable.createFromPath(image_path));
+                    if (img_count == 1)
+                        img_count--;
+                    break;
+                case 2:
+                    if (img_count == 0) {
+                        imageView1.setImageDrawable(Drawable.createFromPath(image_path));
+                        img_pos = 1;
+                    }
+                    if (img_count >= 1) {
+                        imageView2.setImageDrawable(Drawable.createFromPath(image_path));
+                        img_pos = 2;
+                    }
+                    break;
+                case 3:
+                    if (img_count == 0) {
+                        imageView1.setImageDrawable(Drawable.createFromPath(image_path));
+                        img_pos = 1;
+                    }
+                    if (img_count == 1) {
+                        imageView2.setImageDrawable(Drawable.createFromPath(image_path));
+                        img_pos = 2;
+                    }
+                    if (img_count >= 2)
+                        imageView3.setImageDrawable(Drawable.createFromPath(image_path));
+
+                    break;
+            }
+            img_count++;
+            //Toast.makeText(this, img_pos+"", Toast.LENGTH_SHORT).show();
+            if (img_count == 1) {
+                imageView2.setImageResource(plus);
+            } else if (img_count ==2 ) {
+                imageView3.setImageResource(plus);
+            }
+
             new Encode_image().execute();
         }
     }
 
+    // encode images
     private class Encode_image extends AsyncTask<Void,Void,Void> {
 
         @Override
@@ -185,8 +395,10 @@ public class NewWOActivity extends Activity{
             bitmap.compress(Bitmap.CompressFormat.JPEG, 50, stream);
 
             byte[] array = stream.toByteArray();
-            encode_string = Base64.encodeToString(array, Base64.DEFAULT);
+            encode_string[img_pos-1] = Base64.encodeToString(array, Base64.DEFAULT);
 
+            bitmap.recycle();
+            bitmap = null;
             return null;
         }
     }
@@ -209,14 +421,27 @@ public class NewWOActivity extends Activity{
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                //hideDialog();
+                Toast.makeText(NewWOActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                hideDialog();
             }
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<String, String>();
-                map.put("encoded_string", encode_string);
-                map.put("image_name",image_name);
+
+                    if (encode_string[0] != null) {
+                        map.put("encoded_string1", encode_string[0]);
+                        map.put("image_name1", image_name[0]);
+                    }
+                    if (encode_string[1] != null) {
+                        map.put("encoded_string2", encode_string[1]);
+                        map.put("image_name2", image_name[1]);
+                    }
+                    if (encode_string[2] != null) {
+                        map.put("encoded_string3", encode_string[2]);
+                        map.put("image_name3", image_name[2]);
+                    }
+
 
                 return map;
             }
