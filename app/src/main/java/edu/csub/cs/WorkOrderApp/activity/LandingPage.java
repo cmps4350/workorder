@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import edu.csub.cs.WorkOrderApp.R;
-
+//comment
 public class LandingPage extends Activity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btn_landing;
