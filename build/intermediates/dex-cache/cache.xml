@@ -3,84 +3,84 @@
 
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="f696f8cab63eb3cc42a624bffb0769cd3bfb7aff">
+        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_b70182301eef5d223d48f9ef8c76a8ae1caca38e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_45e255a3686b643eecbdc46caa6657c6f0085c50/classes.dex" />
+        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_a50cfd17a6e2cdabf487e00c6b66956af71859d1/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="d63f9405f8d08069af3f748b62244c4af1993c2c">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_4ca6677b118f08c6a99bd082d983c84dec14f471/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_2ec1a1c5486e652409d98a62d87a7410152de30d/classes.dex" />
+        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_c5e3a6615a99a52e1802b2ecc849bd5fd4f5ca0f/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_cace8ff9aed6c9c89c45d6aa2458e61cde20180b/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mcxiaoke.volley-library-aar-1.0.0_5f6ce2aa23c60f611da23949b9160b94048929e1/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kevinjenkin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_99426d8f02b01c21514502776c408b6da81c6161/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_84b8f398f659caf8501ae29334c28c1b0d7b63dc/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="7f0f63fd6b8bc839ea0b7f0017c628f59f0059ee">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_92be97df4a79d573f6e0a4c78a023d51576a5d09/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_7dd04d31fab7b1e7e81038780552b1b52eafd7e2/classes.dex" />
+        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_162174a6d1c98ef8011bb865a1db9eb85989e85a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_e7d3c1ec603385b61c35a541d6678d35b29be0eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/quypng/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_51f7d2a2ddc802c1a21f687c4cad9f9482760dd6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_c6ec788ec46f120b87be6bd53ee2ff93ca2819cc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="daf6f84061b7a1e8650f5e68df6be3b47a9074c5">
+        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_538aef7498e126b822970132bd2dd0a914f6bc02/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/quypng/Desktop/workorder/app/build/intermediates/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
+        <dex dex="/Users/quypng/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mcxiaoke.volley-library-aar-1.0.0_87583a12e5c050afa2fb5653eedaa1614831f775/classes.dex" />
     </item>
 
 </items>
