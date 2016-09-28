@@ -18,6 +18,8 @@ import edu.csub.cs.WorkOrderApp.R;
 
 public class MainActivity extends Activity {
 
+	// Testing push on a mac
+
 	private TextView txtName;
 	private Button btnLogout;
     private Button btnNewWorkorder;
