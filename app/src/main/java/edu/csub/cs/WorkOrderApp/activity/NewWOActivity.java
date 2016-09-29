@@ -302,24 +302,24 @@ public class NewWOActivity extends Activity{
     @TargetApi(Build.VERSION_CODES.M)
     public void getWorkOrderImage(View view, int pos) throws ParseException {
         // checking for deny permission once user click "Dont show this again"
-        if (checkSelfPermission(Manifest.permission.CAMERA)
+/*        if (checkSelfPermission(Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.CAMERA},
                     MY_REQUEST_CODE);
-        } else {
+        } else {*/
             Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             File file = getFile();
             file_uri = Uri.fromFile(file);
             camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, file_uri);
             startActivityForResult(camera_intent, CAM_REQUEST);
-        }
+/*        }
 
         if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
 
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     MY_REQUEST_CODE);
-        }
+        }*/
     }
 
     @Override
