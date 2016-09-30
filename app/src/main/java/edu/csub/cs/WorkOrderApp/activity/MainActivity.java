@@ -21,6 +21,7 @@ public class MainActivity extends Activity {
 	private TextView txtName;
 	private Button btnLogout;
     private Button btnNewWorkorder;
+	private Button btnCompleteOrder;
 
 	private SQLiteHandler db;
 	private SessionManager session;
@@ -33,6 +34,7 @@ public class MainActivity extends Activity {
 		txtName = (TextView) findViewById(R.id.name);
 		btnLogout = (Button) findViewById(R.id.btnLogout);
         btnNewWorkorder = (Button) findViewById(R.id.btnNewWorkOrder);
+		btnCompleteOrder = (Button) findViewById(R.id.btnComplete);
 
 		// SqLite database handler
 		db = new SQLiteHandler(getApplicationContext());
@@ -70,6 +72,17 @@ public class MainActivity extends Activity {
                     //finish();
                 }
             });
+
+		//Mark Order Complete
+		btnCompleteOrder.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View view) {
+				Intent i = new Intent(getApplicationContext(),
+						OrderComplete.class);
+				startActivity(i);
+				//finish();
+			}
+		});
 	}
 
 	/**
