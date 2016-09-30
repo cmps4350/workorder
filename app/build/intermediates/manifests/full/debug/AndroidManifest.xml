@@ -49,6 +49,8 @@
         <activity
             android:name="edu.csub.cs.WorkOrderApp.activity.MainActivity"
             android:launchMode="singleTop" />
+        <activity android:name="edu.csub.cs.WorkOrderApp.activity.OrderComplete" >
+        </activity>
     </application>
 
 </manifest>
