@@ -3,11 +3,20 @@
 
     <item
         is-multidex="true"
+        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_45e255a3686b643eecbdc46caa6657c6f0085c50/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="a4d8c12a5e68203772a23477345d1f69dfef5bf7">
+        sha1="52971826f1e2a5e76d536d7f8c4ef18594aa68df">
         <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_4ca6677b118f08c6a99bd082d983c84dec14f471/classes.dex" />
     </item>
     <item
@@ -48,30 +57,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="8ec7acc2782c3fc03cbbaeb63a06eddeca169c28">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_92be97df4a79d573f6e0a4c78a023d51576a5d09/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_45e255a3686b643eecbdc46caa6657c6f0085c50/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="5c5699834e9722f1c288fea2de82725d078ba127">
         <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_84b8f398f659caf8501ae29334c28c1b0d7b63dc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8f6fdcff90d673b14f71bb43873b65caad07e9e5">
+        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_92be97df4a79d573f6e0a4c78a023d51576a5d09/classes.dex" />
     </item>
     <item
         is-multidex="true"

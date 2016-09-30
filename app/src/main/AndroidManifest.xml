@@ -50,6 +50,9 @@
         <activity
             android:name=".activity.MainActivity"
             android:launchMode="singleTop"></activity>
+        <activity
+            android:name=".activity.OrderComplete"
+            android:launchMode="singleTop"></activity>
     </application>
 
 </manifest>
