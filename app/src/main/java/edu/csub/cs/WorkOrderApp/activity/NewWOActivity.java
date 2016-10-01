@@ -1,13 +1,15 @@
+/**
+ * Created by Jonathan Dinh on 9/24/2016.
+ */
+
 package edu.csub.cs.WorkOrderApp.activity;
 
-import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -46,17 +48,15 @@ import edu.csub.cs.WorkOrderApp.app.AppConfig;
 import static edu.csub.cs.WorkOrderApp.R.drawable.camera;
 import static edu.csub.cs.WorkOrderApp.R.drawable.plus;
 
-/**
- * Created on 9/24/2016.
- */
+
 public class NewWOActivity extends Activity{
 
-    // dummy data
+    /* dummy data
     public static final CharSequence[] BUILDING_OPTIONS  = {"Building A", "Building B", "Building C", "Building D", "Building E", "Building F", "Building G"};
     public static final CharSequence[] AREA_OPTIONS  = {"Track Area", "Pool Area", "Gym", "Locker Area", "Bathroom Area", "Weight", "Room 1", "Room 2"};
     public static final CharSequence[] EQUIPMENT_OPTIONS  = {"Treadmill", "Calf Machine", "Squat Rack", "Pull Up Bar", "Leg Curl Machine", "Leg Press Machine", "Incline"};
     public static final CharSequence[] PRIORITY_OPTIONS  = {"Low", "Medium", "High", "Critical", "Recurring"};
-    public static final CharSequence[] PROBLEM_OPTIONS  = {"Broken Equiments", "Electrical Failure", "Plumbing", "Cosmetic Damages", "Others"};
+    public static final CharSequence[] PROBLEM_OPTIONS  = {"Broken Equiments", "Electrical Failure", "Plumbing", "Cosmetic Damages", "Others"};*/
 
 
     private Uri file_uri;
@@ -85,7 +85,7 @@ public class NewWOActivity extends Activity{
 
         // setting up spinners
         Spinner building = (Spinner) findViewById(R.id.spinner_building);
-        Spinner area = (Spinner) findViewById(R.id.spinner_area);
+        //Spinner area = (Spinner) findViewById(R.id.spinner_area);
         Spinner equipment = (Spinner) findViewById(R.id.spinner_equipment);
         Spinner priority = (Spinner) findViewById(R.id.spinner_priority);
         Spinner problem = (Spinner) findViewById(R.id.spinner_problem);
@@ -93,32 +93,32 @@ public class NewWOActivity extends Activity{
 
         // setting up adapters
         // Building
-        ArrayAdapter<CharSequence> dataAdapter1 = new ArrayAdapter<CharSequence>(this,
-                android.R.layout.simple_spinner_item, BUILDING_OPTIONS);
+        ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, LandingPage.room);
         dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         building.setAdapter(dataAdapter1);
 
         // Area
-        ArrayAdapter<CharSequence> dataAdapter2 = new ArrayAdapter<CharSequence>(this,
+        /*ArrayAdapter<CharSequence> dataAdapter2 = new ArrayAdapter<CharSequence>(this,
                 android.R.layout.simple_spinner_item, AREA_OPTIONS);
         dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        area.setAdapter(dataAdapter2);
+        area.setAdapter(dataAdapter2);*/
 
         // Equipment
-        ArrayAdapter<CharSequence> dataAdapter3 = new ArrayAdapter<CharSequence>(this,
-                android.R.layout.simple_spinner_dropdown_item, EQUIPMENT_OPTIONS);
+        ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_dropdown_item, LandingPage.equipment);
         dataAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         equipment.setAdapter(dataAdapter3);
 
         // Priority
-        ArrayAdapter<CharSequence> dataAdapter4 = new ArrayAdapter<CharSequence>(this,
-                android.R.layout.simple_spinner_item, PRIORITY_OPTIONS);
+        ArrayAdapter<String> dataAdapter4 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, LandingPage.priority);
         dataAdapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         priority.setAdapter(dataAdapter4);
 
         // Problem
-        ArrayAdapter<CharSequence> dataAdapter5 = new ArrayAdapter<CharSequence>(this,
-                android.R.layout.simple_spinner_item, PROBLEM_OPTIONS);
+        ArrayAdapter<String> dataAdapter5 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, LandingPage.type);
         dataAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         problem.setAdapter(dataAdapter5);
 

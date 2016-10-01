@@ -24,102 +24,102 @@
             android:layout_alignParentRight="true"
             android:id="@+id/spinner_building" />
 
-        <Spinner
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:spinnerMode="dropdown"
-            android:layout_alignParentRight="true"
-            android:id="@+id/spinner_area" />
+        <!-- <Spinner
+             android:layout_width="fill_parent"
+             android:layout_height="50dp"
+             android:spinnerMode="dropdown"
+             android:layout_alignParentRight="true"
+             android:id="@+id/spinner_area" />-->
 
-        <Spinner
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:spinnerMode="dropdown"
-            android:layout_alignParentRight="true"
-            android:id="@+id/spinner_equipment" />
+         <Spinner
+             android:layout_width="fill_parent"
+             android:layout_height="50dp"
+             android:spinnerMode="dropdown"
+             android:layout_alignParentRight="true"
+             android:id="@+id/spinner_equipment" />
 
-        <Spinner
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:spinnerMode="dropdown"
-            android:layout_alignParentRight="true"
-            android:id="@+id/spinner_problem" />
+         <Spinner
+             android:layout_width="fill_parent"
+             android:layout_height="50dp"
+             android:spinnerMode="dropdown"
+             android:layout_alignParentRight="true"
+             android:id="@+id/spinner_problem" />
 
-        <Spinner
-            android:layout_width="fill_parent"
-            android:layout_height="50dp"
-            android:spinnerMode="dropdown"
-            android:layout_alignParentRight="true"
-            android:id="@+id/spinner_priority" />
+         <Spinner
+             android:layout_width="fill_parent"
+             android:layout_height="50dp"
+             android:spinnerMode="dropdown"
+             android:layout_alignParentRight="true"
+             android:id="@+id/spinner_priority" />
 
 
-    </LinearLayout>
+     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"
-        android:layout_below="@+id/iv_camera2"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp" />
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:background="@android:color/darker_gray"
+         android:layout_below="@+id/iv_camera2"
+         android:layout_marginLeft="20dp"
+         android:layout_marginRight="20dp" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Submit"
-        android:id="@+id/submit_wo"
-        android:layout_below="@+id/description"
-        android:layout_centerHorizontal="true" />
+     <Button
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Submit"
+         android:id="@+id/submit_wo"
+         android:layout_below="@+id/description"
+         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:id="@+id/description"
-        android:layout_width="fill_parent"
-        android:layout_height="55dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="15dp"
-        android:inputType="textCapSentences|textMultiLine"
-        android:ellipsize="start"
-        android:hint="@string/description"
-        android:layout_below="@+id/linearLayout"
-        android:background="@drawable/border"
-        android:layout_alignParentEnd="true"
-        android:paddingTop="2dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="2dp"
-        android:textSize="15dp" />
+     <EditText
+         android:id="@+id/description"
+         android:layout_width="fill_parent"
+         android:layout_height="55dp"
+         android:layout_marginLeft="15dp"
+         android:layout_marginTop="15dp"
+         android:layout_marginBottom="20dp"
+         android:layout_marginRight="15dp"
+         android:inputType="textCapSentences|textMultiLine"
+         android:ellipsize="start"
+         android:hint="@string/description"
+         android:layout_below="@+id/linearLayout"
+         android:background="@drawable/border"
+         android:layout_alignParentEnd="true"
+         android:paddingTop="2dp"
+         android:paddingLeft="10dp"
+         android:paddingRight="10dp"
+         android:paddingBottom="2dp"
+         android:textSize="15dp" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/iv_camera2"
-        android:src="@drawable/camera"
-        android:textSize="20dp"
-        android:onClick="getWorkOrderImage"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginRight="5dp"
-        android:layout_marginLeft="5dp" />
+     <ImageView
+         android:layout_width="100dp"
+         android:layout_height="100dp"
+         android:id="@+id/iv_camera2"
+         android:src="@drawable/camera"
+         android:textSize="20dp"
+         android:onClick="getWorkOrderImage"
+         android:layout_alignParentTop="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginRight="5dp"
+         android:layout_marginLeft="5dp" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/iv_camera3"
-        android:textSize="20dp"
-        android:onClick="getWorkOrderImage"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/iv_camera2" />
+     <ImageView
+         android:layout_width="100dp"
+         android:layout_height="100dp"
+         android:id="@+id/iv_camera3"
+         android:textSize="20dp"
+         android:onClick="getWorkOrderImage"
+         android:layout_alignParentTop="true"
+         android:layout_toEndOf="@+id/iv_camera2" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/iv_camera1"
-        android:text="@string/welcome"
-        android:textSize="20dp"
-        android:onClick="getWorkOrderImage"
-        android:layout_alignBottom="@+id/view2"
-        android:layout_toStartOf="@+id/iv_camera2" />
+     <ImageView
+         android:layout_width="100dp"
+         android:layout_height="100dp"
+         android:id="@+id/iv_camera1"
+         android:text="@string/welcome"
+         android:textSize="20dp"
+         android:onClick="getWorkOrderImage"
+         android:layout_alignBottom="@+id/view2"
+         android:layout_toStartOf="@+id/iv_camera2" />
 
-</RelativeLayout>
+ </RelativeLayout>

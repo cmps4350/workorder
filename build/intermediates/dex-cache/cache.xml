@@ -3,84 +3,84 @@
 
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_45e255a3686b643eecbdc46caa6657c6f0085c50/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="52971826f1e2a5e76d536d7f8c4ef18594aa68df">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_4ca6677b118f08c6a99bd082d983c84dec14f471/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.1.1_2ec1a1c5486e652409d98a62d87a7410152de30d/classes.dex" />
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_1f730c7ef7e6edb7de425a9552061556bd2ab737\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.1.1_cace8ff9aed6c9c89c45d6aa2458e61cde20180b/classes.dex" />
+        sha1="6cd82a4e15062fe5403b60c47ab0a04015273c0a">
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_897803dda727ccf1c12540062adc574799e3b31a\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.0/jars/classes.jar"
+        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\exploded-aar\com.mcxiaoke.volley\library-aar\1.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="e40b9a81989bd4a846018551c280f8c4d837bf2e">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mcxiaoke.volley-library-aar-1.0.0_5f6ce2aa23c60f611da23949b9160b94048929e1/classes.dex" />
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mcxiaoke.volley-library-aar-1.0.0_22ebb93a1a33f3380acb89e4737f479f7c0cb6f3\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_93862d6b58c16f85782c91a4c19e42186f8381e6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ponism\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.1.1_99426d8f02b01c21514502776c408b6da81c6161/classes.dex" />
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_cce9241a8c8102ead1e45b9696583f3dca8b2e18\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.1.1_84b8f398f659caf8501ae29334c28c1b0d7b63dc/classes.dex" />
+        sha1="8f59976ff285aae15acdd6871f8e813e4a2bb6b0">
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b06b83aff126ff0e64094080640832146166deb1\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="8f6fdcff90d673b14f71bb43873b65caad07e9e5">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_92be97df4a79d573f6e0a4c78a023d51576a5d09/classes.dex" />
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.1.1_30e9cb4999fcbe119c05a5ddfd4954277ab47247\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Users/kevinjenkin/Desktop/workorder/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_7dd04d31fab7b1e7e81038780552b1b52eafd7e2/classes.dex" />
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.1.1_b78a6da5f9f560ebd29fc8d876c9e27aafc6f54a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_2cf5baaeebca13e4434ec631bb1543892dad66ce\classes.dex" />
     </item>
 
 </items>
