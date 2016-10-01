@@ -71,7 +71,7 @@ public class LandingPage extends Activity {
     }
 
     private void get_data(String url, final List list) {
-        pDialog.setMessage("Adding New Work Order ...");
+        pDialog.setMessage("Loading data ...");
         showDialog();
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
