@@ -16,7 +16,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="6cd82a4e15062fe5403b60c47ab0a04015273c0a">
+        sha1="6ba5eb2f047d1507de29aa9d25063949f078971e">
         <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_897803dda727ccf1c12540062adc574799e3b31a\classes.dex" />
     </item>
     <item
@@ -52,7 +52,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="8f59976ff285aae15acdd6871f8e813e4a2bb6b0">
+        sha1="14f5e1ce28a43a6ff651a8ea06f74bdbdd81fa4c">
         <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b06b83aff126ff0e64094080640832146166deb1\classes.dex" />
     </item>
     <item

@@ -20,6 +20,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -71,6 +73,15 @@ public class NewWOActivity extends Activity{
     private int img_count = 0;
     private int img_pos = 0;
     private int position;
+    Spinner building;
+    Spinner equipment;
+    Spinner priority;
+    Spinner problem;
+    int selected_building;
+    int selected_equipment;
+    int selected_priority;
+    int selected_problem;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,15 +91,20 @@ public class NewWOActivity extends Activity{
         imageView1 = (ImageView)findViewById(R.id.iv_camera1);
         imageView2 = (ImageView)findViewById(R.id.iv_camera2);
         imageView3 = (ImageView)findViewById(R.id.iv_camera3);
+        selected_building = 0;
+        selected_equipment = 0;
+        selected_priority = 0;
+        selected_problem = 0;
         encode_string = new String[3];
         image_name = new String[3];
 
+
         // setting up spinners
-        Spinner building = (Spinner) findViewById(R.id.spinner_building);
+        building = (Spinner) findViewById(R.id.spinner_building);
         //Spinner area = (Spinner) findViewById(R.id.spinner_area);
-        Spinner equipment = (Spinner) findViewById(R.id.spinner_equipment);
-        Spinner priority = (Spinner) findViewById(R.id.spinner_priority);
-        Spinner problem = (Spinner) findViewById(R.id.spinner_problem);
+        equipment = (Spinner) findViewById(R.id.spinner_equipment);
+        priority = (Spinner) findViewById(R.id.spinner_priority);
+        problem = (Spinner) findViewById(R.id.spinner_problem);
         btn_submit = (Button) findViewById(R.id.submit_wo);
 
         // setting up adapters
@@ -262,6 +278,85 @@ public class NewWOActivity extends Activity{
                 return false;
             }
         });
+
+        building.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int arg2, long arg3) {
+                // TODO Auto-generated method stub
+
+                selected_building = arg2+1;
+            }
+
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+        equipment.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int arg2, long arg3) {
+                // TODO Auto-generated method stub
+
+                selected_equipment = arg2+1;
+
+            }
+
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+        problem.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int arg2, long arg3) {
+                // TODO Auto-generated method stub
+
+                selected_problem = arg2+1;
+            }
+
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+        priority.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            public void onItemSelected(AdapterView<?> arg0, View arg1,
+                                       int arg2, long arg3) {
+                // TODO Auto-generated method stub
+
+                selected_priority = arg2+1;
+            }
+
+            public void onNothingSelected(AdapterView<?> arg0) {
+                // TODO Auto-generated method stub
+
+            }
+        });
+
+
+    }
+
+
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+                               long arg3) {
+        switch(arg0.getId()){
+            case R.id.spinner_building:
+                Toast.makeText(this, "Testing", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.spinner_equipment:
+                break;
+            case R.id.spinner_priority:
+                break;
+            case R.id.spinner_problem:
+                break;
+        }
     }
 
     private int getImgPos(int a) {
@@ -277,7 +372,7 @@ public class NewWOActivity extends Activity{
             return 2;
         if (img_count == 2 && a == 3)
             return 3;
-        if (img_count == 3)
+        if (img_count >= 3)
             return a;
         return 0;
     }
@@ -415,7 +510,7 @@ public class NewWOActivity extends Activity{
             @Override
             public void onResponse(String response) {
                 hideDialog();
-
+                finish();
             }
         }, new Response.ErrorListener() {
 
@@ -442,6 +537,13 @@ public class NewWOActivity extends Activity{
                         map.put("image_name3", image_name[2]);
                     }
 
+                    if(selected_building!=0 && selected_problem != 0 &&
+                            selected_priority != 0 && selected_equipment != 0) {
+                        map.put("building", selected_building+"");
+                        map.put("problem", selected_problem+"");
+                        map.put("priority", selected_priority+"");
+                        map.put("equipment", selected_equipment+"");
+                    }
 
                 return map;
             }
