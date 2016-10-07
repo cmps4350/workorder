@@ -11,10 +11,12 @@ import android.widget.RelativeLayout;
 
 import edu.csub.cs.WorkOrderApp.R;
 
+import static edu.csub.cs.WorkOrderApp.R.id.btn_landing;
 import static edu.csub.cs.WorkOrderApp.R.id.landinglayout;
 import static edu.csub.cs.WorkOrderApp.R.id.linearLayout;
 import android.graphics.drawable.AnimationDrawable;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class LandingPage extends Activity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
@@ -29,12 +31,13 @@ public class LandingPage extends Activity {
         cogs.setBackgroundResource(R.drawable.cogs_animation);
         AnimationDrawable cogsAnimation = (AnimationDrawable) cogs.getBackground();
         cogsAnimation.start();
-
+        Toast.makeText(getApplicationContext(),
+                "Starting Facility Maintenance Reporter", Toast.LENGTH_LONG)
+                .show();
         btn_landing = (Button) findViewById(R.id.btn_landing);
+
         Thread timerThread = new Thread(){
             public void run(){
-
-
                 try{
                     sleep(3000);
                 }catch(InterruptedException e){

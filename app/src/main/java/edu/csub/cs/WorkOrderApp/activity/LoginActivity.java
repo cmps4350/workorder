@@ -82,7 +82,7 @@ public class LoginActivity extends Activity {
                 } else {
                     // Prompt user to enter credentials
                     Toast.makeText(getApplicationContext(),
-                            "Please enter the credentials!", Toast.LENGTH_LONG)
+                            "Please enter your credentials!", Toast.LENGTH_LONG)
                             .show();
                 }
             }
@@ -117,7 +117,7 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "Login Response: " + response.toString());
+                Log.d(TAG, "Login Response: " );
                 hideDialog();
 
                 try {
@@ -174,7 +174,7 @@ public class LoginActivity extends Activity {
             @Override
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap< >();
                 params.put("email", email);
                 params.put("password", password);
 
