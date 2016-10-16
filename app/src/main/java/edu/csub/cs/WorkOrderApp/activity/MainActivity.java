@@ -12,9 +12,9 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 
+import edu.csub.cs.WorkOrderApp.R;
 import edu.csub.cs.WorkOrderApp.helper.SQLiteHandler;
 import edu.csub.cs.WorkOrderApp.helper.SessionManager;
-import edu.csub.cs.WorkOrderApp.R;
 
 public class MainActivity extends Activity {
 
@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 	private Button btnLogout;
     private Button btnNewWorkorder;
 	private Button btnCompleteOrder;
-
+	public String eid;
 	private SQLiteHandler db;
 	private SessionManager session;
 
@@ -52,7 +52,7 @@ public class MainActivity extends Activity {
 		HashMap<String, String> user = db.getUserDetails();
 
 		String name = user.get("name");
-		String email = user.get("email");
+		eid = user.get("uid");
 
 		// Displaying the user details on the screen
 		txtName.setText(name);

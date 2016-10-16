@@ -46,6 +46,7 @@ import java.util.Map;
 
 import edu.csub.cs.WorkOrderApp.R;
 import edu.csub.cs.WorkOrderApp.app.AppConfig;
+import edu.csub.cs.WorkOrderApp.helper.SQLiteHandler;
 
 import static edu.csub.cs.WorkOrderApp.R.drawable.camera;
 import static edu.csub.cs.WorkOrderApp.R.drawable.plus;
@@ -60,7 +61,7 @@ public class NewWOActivity extends Activity{
     public static final CharSequence[] PRIORITY_OPTIONS  = {"Low", "Medium", "High", "Critical", "Recurring"};
     public static final CharSequence[] PROBLEM_OPTIONS  = {"Broken Equiments", "Electrical Failure", "Plumbing", "Cosmetic Damages", "Others"};*/
 
-
+    public SQLiteHandler db;
     private Uri file_uri;
     private Bitmap bitmap;
     private static String[] encode_string;
@@ -81,7 +82,7 @@ public class NewWOActivity extends Activity{
     int selected_equipment;
     int selected_priority;
     int selected_problem;
-
+    String eid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +107,11 @@ public class NewWOActivity extends Activity{
         priority = (Spinner) findViewById(R.id.spinner_priority);
         problem = (Spinner) findViewById(R.id.spinner_problem);
         btn_submit = (Button) findViewById(R.id.submit_wo);
+
+        // get user info back from sqlite
+        db = new SQLiteHandler(getApplicationContext());
+        HashMap<String, String> user = db.getUserDetails();
+        eid = user.get("uid");
 
         // setting up adapters
         // Building
@@ -348,7 +354,6 @@ public class NewWOActivity extends Activity{
                                long arg3) {
         switch(arg0.getId()){
             case R.id.spinner_building:
-                Toast.makeText(this, "Testing", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.spinner_equipment:
                 break;
@@ -516,7 +521,7 @@ public class NewWOActivity extends Activity{
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(NewWOActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewWOActivity.this, eid, Toast.LENGTH_SHORT).show();
                 hideDialog();
             }
         }) {
@@ -537,12 +542,14 @@ public class NewWOActivity extends Activity{
                         map.put("image_name3", image_name[2]);
                     }
 
-                    if(selected_building!=0 && selected_problem != 0 &&
-                            selected_priority != 0 && selected_equipment != 0) {
+                    if(encode_string[0] != null && selected_building!=0 &&
+                            selected_problem != 0 && selected_priority != 0 &&
+                            selected_equipment != 0) {
                         map.put("building", selected_building+"");
                         map.put("problem", selected_problem+"");
                         map.put("priority", selected_priority+"");
                         map.put("equipment", selected_equipment+"");
+                        map.put("user_id", eid+"");
                     }
 
                 return map;
