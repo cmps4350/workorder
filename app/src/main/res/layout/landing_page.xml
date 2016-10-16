@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/landinglayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/img24h"
+    android:background="@drawable/silver_cogs"
     android:orientation="vertical"
     android:padding="10dp"
     android:gravity="bottom"
     android:baselineAligned="true">
+
+
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -14,6 +17,15 @@
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
+
+        <ImageView
+            android:contentDescription="@string/description"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/cogs"
+
+            />
+
         <Button
             android:layout_width="200dp"
             android:layout_height="wrap_content"
@@ -23,7 +35,7 @@
             android:layout_marginBottom="30dp"
             android:background="#c6c3c3"
             android:textColor="#302f2f"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
 
