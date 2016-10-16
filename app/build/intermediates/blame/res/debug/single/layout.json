@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple.xml"
-    },
-    {
         "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
         "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
+        "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_screen_simple.xml"
     },
     {
         "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
@@ -20,12 +20,12 @@
         "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_media.xml"
     },
     {
-        "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
-    },
-    {
         "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
@@ -64,12 +64,12 @@
         "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
-        "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_order_complete.xml",
-        "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\src\\main\\res\\layout\\activity_order_complete.xml"
-    },
-    {
         "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
         "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_order_complete.xml",
+        "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\src\\main\\res\\layout\\activity_order_complete.xml"
     },
     {
         "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
