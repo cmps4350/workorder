@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
     defaultConfig {
         applicationId "edu.csub.cs.WorkOrderApp"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 23
     }
     buildTypes {

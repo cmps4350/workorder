@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,7 @@ import edu.csub.cs.WorkOrderApp.helper.SessionManager;
 import edu.csub.cs.WorkOrderApp.R;
 import edu.csub.cs.WorkOrderApp.app.AppController;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btnLogin;
     private Button btnLinkToRegister;
@@ -43,6 +44,9 @@ public class LoginActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.cogs_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_login);
 
         inputEmail = (EditText) findViewById(R.id.email);
@@ -82,7 +86,7 @@ public class LoginActivity extends Activity {
                 } else {
                     // Prompt user to enter credentials
                     Toast.makeText(getApplicationContext(),
-                            "Please enter the credentials!", Toast.LENGTH_LONG)
+                            "Please enter your credentials!", Toast.LENGTH_LONG)
                             .show();
                 }
             }
@@ -117,7 +121,7 @@ public class LoginActivity extends Activity {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "Login Response: " + response.toString());
+                Log.d(TAG, "Login Response: " );
                 hideDialog();
 
                 try {
@@ -136,9 +140,8 @@ public class LoginActivity extends Activity {
                         JSONObject user = jObj.getJSONObject("user");
                         String name = user.getString("name");
                         String email = user.getString("email");
-                        String created_at = user
-                                .getString("created_at");
-
+                        String eid = user.getString("id");
+                        String created_at = user.getString("created_at");
                         // Inserting row in users table
                         db.addUser(name, email, uid, created_at);
 
@@ -174,7 +177,7 @@ public class LoginActivity extends Activity {
             @Override
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
-                Map<String, String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap< >();
                 params.put("email", email);
                 params.put("password", password);
 

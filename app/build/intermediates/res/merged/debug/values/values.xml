@@ -281,11 +281,12 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">24h Fitness Work Order</string>
+    <string name="app_name">Facility maintenance Reporter</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="btn_animation">LOGIN</string>
     <string name="btn_complete">MARK COMPLETE</string>
     <string name="btn_landing">Login</string>
-    <string name="btn_link_to_login">Already registred? Login now.</string>
+    <string name="btn_link_to_login">Already registered? Login now.</string>
     <string name="btn_link_to_register">Not a member? Sign up now.</string>
     <string name="btn_login">LOGIN</string>
     <string name="btn_logout">LOGOUT</string>
@@ -301,16 +302,21 @@
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="take_picture">Take picture</string>
     <string name="welcome">Welcome</string>
+    <style name="ActionBar" parent="Theme.AppCompat.Light">
+        <item name="android:icon">@drawable/cogs_icon</item>
+    </style>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
     <style name="Animation.AppCompat.DropDownUp" parent="Base.Animation.AppCompat.DropDownUp"/>
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <item name="android:icon">@drawable/cogs_icon</item>
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
+
     </style>
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
