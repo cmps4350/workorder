@@ -60,6 +60,10 @@
         "source": "D:\\4350\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
+        "merged": "D:\\4350\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_order_complete.xml",
+        "source": "D:\\4350\\workorder\\app\\src\\main\\res\\layout\\activity_order_complete.xml"
+    },
+    {
         "merged": "D:\\4350\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
         "source": "D:\\4350\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\notification_template_part_time.xml"
     },
@@ -146,6 +150,10 @@
     {
         "merged": "D:\\4350\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
         "source": "D:\\4350\\workorder\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "D:\\4350\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\order_list.xml",
+        "source": "D:\\4350\\workorder\\app\\src\\main\\res\\layout\\order_list.xml"
     },
     {
         "merged": "D:\\4350\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",

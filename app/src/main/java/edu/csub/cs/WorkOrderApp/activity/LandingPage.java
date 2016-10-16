@@ -4,6 +4,7 @@ package edu.csub.cs.WorkOrderApp.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -18,7 +19,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-public class LandingPage extends Activity {
+public class LandingPage extends AppCompatActivity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btn_landing;
 
@@ -26,6 +27,9 @@ public class LandingPage extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.cogs_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.landing_page);
         ImageView cogs = (ImageView) findViewById(R.id.cogs);
         cogs.setBackgroundResource(R.drawable.cogs_animation);
@@ -45,6 +49,7 @@ public class LandingPage extends Activity {
                 }finally{
                     Intent intent = new Intent(LandingPage.this,LoginActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         };

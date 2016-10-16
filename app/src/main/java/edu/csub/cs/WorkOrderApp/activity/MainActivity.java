@@ -6,6 +6,7 @@ package edu.csub.cs.WorkOrderApp.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,7 +17,7 @@ import edu.csub.cs.WorkOrderApp.R;
 import edu.csub.cs.WorkOrderApp.helper.SQLiteHandler;
 import edu.csub.cs.WorkOrderApp.helper.SessionManager;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
 	// Testing push on a mac
 
@@ -31,6 +32,9 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getSupportActionBar().setDisplayShowHomeEnabled(true);
+		getSupportActionBar().setLogo(R.drawable.cogs_icon);
+		getSupportActionBar().setDisplayUseLogoEnabled(true);
 		setContentView(R.layout.activity_main);
 
 		txtName = (TextView) findViewById(R.id.name);

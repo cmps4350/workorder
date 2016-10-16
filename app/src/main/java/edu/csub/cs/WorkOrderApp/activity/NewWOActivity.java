@@ -18,6 +18,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.view.View;
 import android.widget.AdapterView;
@@ -52,7 +53,7 @@ import static edu.csub.cs.WorkOrderApp.R.drawable.camera;
 import static edu.csub.cs.WorkOrderApp.R.drawable.plus;
 
 
-public class NewWOActivity extends Activity{
+public class NewWOActivity extends AppCompatActivity {
 
     /* dummy data
     public static final CharSequence[] BUILDING_OPTIONS  = {"Building A", "Building B", "Building C", "Building D", "Building E", "Building F", "Building G"};
@@ -86,6 +87,9 @@ public class NewWOActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.cogs_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_newwo);
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -115,8 +119,9 @@ public class NewWOActivity extends Activity{
 
         // setting up adapters
         // Building
+        /*
         ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, LandingPage.room);
+                android.R.layout.simple_spinner_item, NewWOActivity.room);
         dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         building.setAdapter(dataAdapter1);
 
@@ -126,6 +131,8 @@ public class NewWOActivity extends Activity{
         dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         area.setAdapter(dataAdapter2);*/
 
+
+        /*
         // Equipment
         ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, LandingPage.equipment);
@@ -143,6 +150,11 @@ public class NewWOActivity extends Activity{
                 android.R.layout.simple_spinner_item, LandingPage.type);
         dataAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         problem.setAdapter(dataAdapter5);
+
+        */
+
+
+
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
 
