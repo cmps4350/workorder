@@ -18,6 +18,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.view.View;
 import android.widget.AdapterView;
@@ -56,7 +57,8 @@ import static edu.csub.cs.WorkOrderApp.R.drawable.camera;
 import static edu.csub.cs.WorkOrderApp.R.drawable.plus;
 
 
-public class NewWOActivity extends Activity{
+public class NewWOActivity extends AppCompatActivity{
+//Activity{
 
     /* dummy data
     public static final CharSequence[] BUILDING_OPTIONS  = {"Building A", "Building B", "Building C", "Building D", "Building E", "Building F", "Building G"};
@@ -92,6 +94,11 @@ public class NewWOActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.cogs_icon);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         setContentView(R.layout.activity_newwo);
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
