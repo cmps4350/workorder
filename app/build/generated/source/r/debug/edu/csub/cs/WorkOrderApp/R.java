@@ -2213,21 +2213,20 @@ containing a value of this type.
         public static final int design_fab_background=0x7f020049;
         public static final int design_snackbar_background=0x7f02004a;
         public static final int ic_launcher=0x7f02004b;
-        public static final int img24h=0x7f02004c;
-        public static final int notification_template_icon_bg=0x7f02005a;
-        public static final int plus=0x7f02004d;
-        public static final int plus2=0x7f02004e;
-        public static final int silver_cogs=0x7f02004f;
-        public static final int silver_cogs1=0x7f020050;
-        public static final int silver_cogs10=0x7f020051;
-        public static final int silver_cogs2=0x7f020052;
-        public static final int silver_cogs3=0x7f020053;
-        public static final int silver_cogs4=0x7f020054;
-        public static final int silver_cogs5=0x7f020055;
-        public static final int silver_cogs6=0x7f020056;
-        public static final int silver_cogs7=0x7f020057;
-        public static final int silver_cogs8=0x7f020058;
-        public static final int silver_cogs9=0x7f020059;
+        public static final int notification_template_icon_bg=0x7f020059;
+        public static final int plus=0x7f02004c;
+        public static final int plus2=0x7f02004d;
+        public static final int silver_cogs=0x7f02004e;
+        public static final int silver_cogs1=0x7f02004f;
+        public static final int silver_cogs10=0x7f020050;
+        public static final int silver_cogs2=0x7f020051;
+        public static final int silver_cogs3=0x7f020052;
+        public static final int silver_cogs4=0x7f020053;
+        public static final int silver_cogs5=0x7f020054;
+        public static final int silver_cogs6=0x7f020055;
+        public static final int silver_cogs7=0x7f020056;
+        public static final int silver_cogs8=0x7f020057;
+        public static final int silver_cogs9=0x7f020058;
     }
     public static final class id {
         public static final int action0=0x7f0b008d;

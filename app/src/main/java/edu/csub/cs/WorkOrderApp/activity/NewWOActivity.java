@@ -18,7 +18,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Base64;
 import android.view.View;
 import android.widget.AdapterView;
@@ -37,6 +36,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.text.ParseException;
@@ -53,7 +55,7 @@ import static edu.csub.cs.WorkOrderApp.R.drawable.camera;
 import static edu.csub.cs.WorkOrderApp.R.drawable.plus;
 
 
-public class NewWOActivity extends AppCompatActivity {
+public class NewWOActivity extends Activity{
 
     /* dummy data
     public static final CharSequence[] BUILDING_OPTIONS  = {"Building A", "Building B", "Building C", "Building D", "Building E", "Building F", "Building G"};
@@ -87,9 +89,6 @@ public class NewWOActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.cogs_icon);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_newwo);
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
@@ -119,9 +118,8 @@ public class NewWOActivity extends AppCompatActivity {
 
         // setting up adapters
         // Building
-        /*
         ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, NewWOActivity.room);
+                android.R.layout.simple_spinner_item, LandingPage.room);
         dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         building.setAdapter(dataAdapter1);
 
@@ -131,8 +129,6 @@ public class NewWOActivity extends AppCompatActivity {
         dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         area.setAdapter(dataAdapter2);*/
 
-
-        /*
         // Equipment
         ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, LandingPage.equipment);
@@ -150,11 +146,6 @@ public class NewWOActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, LandingPage.type);
         dataAdapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         problem.setAdapter(dataAdapter5);
-
-        */
-
-
-
 
         btn_submit.setOnClickListener(new View.OnClickListener() {
 
@@ -419,11 +410,11 @@ public class NewWOActivity extends AppCompatActivity {
             requestPermissions(new String[]{Manifest.permission.CAMERA},
                     MY_REQUEST_CODE);
         } else {*/
-            Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            File file = getFile();
-            file_uri = Uri.fromFile(file);
-            camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, file_uri);
-            startActivityForResult(camera_intent, CAM_REQUEST);
+        Intent camera_intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        File file = getFile();
+        file_uri = Uri.fromFile(file);
+        camera_intent.putExtra(MediaStore.EXTRA_OUTPUT, file_uri);
+        startActivityForResult(camera_intent, CAM_REQUEST);
 /*        }
 
         if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)
@@ -497,11 +488,16 @@ public class NewWOActivity extends AppCompatActivity {
     }
 
     // encode images
-    private class Encode_image extends AsyncTask<Void,Void,Void> {
+    private class Encode_image extends AsyncTask<String, Integer, String> {
+        private final ProgressDialog dialog = new ProgressDialog(NewWOActivity.this);
+        @Override
+        protected void onPreExecute() {
+            this.dialog.setMessage("Processing...");
+            this.dialog.show();
+        }
 
         @Override
-        protected Void doInBackground(Void... voids) {
-
+        protected String doInBackground(String... params) {
             bitmap = BitmapFactory.decodeFile(file_uri.getPath());
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.JPEG, 50, stream);
@@ -511,15 +507,21 @@ public class NewWOActivity extends AppCompatActivity {
 
             bitmap.recycle();
             bitmap = null;
-            return null;
+            return "All Done!";
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            this.dialog.dismiss();
         }
     }
+
 
     public void insert_to_database() {
 
         pDialog.setMessage("Adding New Work Order ...");
         showDialog();
-
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest strReq = new StringRequest(Request.Method.POST,
                 AppConfig.URL_INSERT_WO, new Response.Listener<String>() {
@@ -527,42 +529,62 @@ public class NewWOActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 hideDialog();
+                try {
+                    JSONObject jObj = new JSONObject(response);
+                    boolean error = jObj.getBoolean("error");
+
+                    if (error) {
+                        String errorMsg = jObj.getString("error_msg");
+                        Toast.makeText(getApplicationContext(),
+                                errorMsg, Toast.LENGTH_LONG).show();
+
+                    } else {
+                        Toast.makeText(NewWOActivity.this, "Successfully added work order.", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                } catch (JSONException e) {
+                    // JSON error
+
+                }
                 finish();
+
             }
         }, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(NewWOActivity.this, eid, Toast.LENGTH_SHORT).show();
                 hideDialog();
+                Toast.makeText(NewWOActivity.this, "Error creating new work order.", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String,String> map = new HashMap<String, String>();
 
-                    if (encode_string[0] != null) {
-                        map.put("encoded_string1", encode_string[0]);
-                        map.put("image_name1", image_name[0]);
-                    }
-                    if (encode_string[1] != null) {
-                        map.put("encoded_string2", encode_string[1]);
-                        map.put("image_name2", image_name[1]);
-                    }
-                    if (encode_string[2] != null) {
-                        map.put("encoded_string3", encode_string[2]);
-                        map.put("image_name3", image_name[2]);
-                    }
+                if (encode_string[0] != null) {
+                    map.put("encoded_string1", encode_string[0]);
+                    map.put("image_name1", image_name[0]);
+                }
+                if (encode_string[1] != null) {
+                    map.put("encoded_string2", encode_string[1]);
+                    map.put("image_name2", image_name[1]);
+                }
+                if (encode_string[2] != null) {
+                    map.put("encoded_string3", encode_string[2]);
+                    map.put("image_name3", image_name[2]);
+                }
 
-                    if(encode_string[0] != null && selected_building!=0 &&
-                            selected_problem != 0 && selected_priority != 0 &&
-                            selected_equipment != 0) {
-                        map.put("building", selected_building+"");
-                        map.put("problem", selected_problem+"");
-                        map.put("priority", selected_priority+"");
-                        map.put("equipment", selected_equipment+"");
-                        map.put("user_id", eid+"");
-                    }
+                if(encode_string[0] != null && selected_building!=0 &&
+                        selected_problem != 0 && selected_priority != 0 &&
+                        selected_equipment != 0) {
+                    map.put("building", selected_building+"");
+                    map.put("problem", selected_problem+"");
+                    map.put("priority", selected_priority+"");
+                    map.put("equipment", selected_equipment+"");
+                    map.put("user_id", eid+"");
+                }
 
                 return map;
             }
