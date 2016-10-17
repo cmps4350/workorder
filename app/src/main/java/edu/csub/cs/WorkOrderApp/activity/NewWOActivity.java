@@ -24,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -77,6 +78,7 @@ public class NewWOActivity extends Activity{
     private int img_count = 0;
     private int img_pos = 0;
     private int position;
+    private EditText desc_tv;
     Spinner building;
     Spinner equipment;
     Spinner priority;
@@ -85,16 +87,14 @@ public class NewWOActivity extends Activity{
     int selected_equipment;
     int selected_priority;
     int selected_problem;
-    String eid;
+    private String eid;
+    private String description;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newwo);
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
-        imageView1 = (ImageView)findViewById(R.id.iv_camera1);
-        imageView2 = (ImageView)findViewById(R.id.iv_camera2);
-        imageView3 = (ImageView)findViewById(R.id.iv_camera3);
         selected_building = 0;
         selected_equipment = 0;
         selected_priority = 0;
@@ -102,6 +102,13 @@ public class NewWOActivity extends Activity{
         encode_string = new String[3];
         image_name = new String[3];
 
+        // setting up camera image views
+        imageView1 = (ImageView)findViewById(R.id.iv_camera1);
+        imageView2 = (ImageView)findViewById(R.id.iv_camera2);
+        imageView3 = (ImageView)findViewById(R.id.iv_camera3);
+
+        // setting up description box textview
+        desc_tv = (EditText)findViewById(R.id.description);
 
         // setting up spinners
         building = (Spinner) findViewById(R.id.spinner_building);
@@ -110,6 +117,7 @@ public class NewWOActivity extends Activity{
         priority = (Spinner) findViewById(R.id.spinner_priority);
         problem = (Spinner) findViewById(R.id.spinner_problem);
         btn_submit = (Button) findViewById(R.id.submit_wo);
+
 
         // get user info back from sqlite
         db = new SQLiteHandler(getApplicationContext());
@@ -150,6 +158,7 @@ public class NewWOActivity extends Activity{
         btn_submit.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View view) {
+                description = desc_tv.getText().toString();
                 insert_to_database();
             }
 
@@ -540,7 +549,6 @@ public class NewWOActivity extends Activity{
 
                     } else {
                         Toast.makeText(NewWOActivity.this, "Successfully added work order.", Toast.LENGTH_SHORT).show();
-
                     }
 
                 } catch (JSONException e) {
@@ -583,6 +591,7 @@ public class NewWOActivity extends Activity{
                     map.put("problem", selected_problem+"");
                     map.put("priority", selected_priority+"");
                     map.put("equipment", selected_equipment+"");
+                    map.put("description", description);
                     map.put("user_id", eid+"");
                 }
 
