@@ -39,21 +39,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_30e9cb4999fcbe119c05a5ddfd4954277ab47247.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.2"
         sha1="5c5699834e9722f1c288fea2de82725d078ba127">
         <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.1.1_2cf5baaeebca13e4434ec631bb1543892dad66ce.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\Ponism\Documents\GitHub\workorder\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_30e9cb4999fcbe119c05a5ddfd4954277ab47247.jar" />
     </item>
     <item
         is-multidex="false"
