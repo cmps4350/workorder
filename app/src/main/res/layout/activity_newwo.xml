@@ -102,17 +102,17 @@
       android:layout_width="match_parent"
       android:layout_height="50dp">
 
-   <TextView
-       android:layout_width="0dp"
-       android:layout_height="match_parent"
-       android:inputType="textPersonName"
-       android:text="Priority"
-       android:ems="10"
-       android:id="@+id/editText5"
-       android:layout_weight="0.3"
-       android:gravity="center" />
+      <TextView
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:inputType="textPersonName"
+          android:text="Priority"
+          android:ems="10"
+          android:id="@+id/editText5"
+          android:layout_weight="0.3"
+          android:gravity="center" />
 
-   <Spinner
+      <Spinner
        android:layout_height="match_parent"
               android:spinnerMode="dropdown"
               android:layout_alignParentRight="true"
@@ -130,7 +130,8 @@
          android:background="@android:color/darker_gray"
          android:layout_below="@+id/iv_camera2"
          android:layout_marginLeft="20dp"
-         android:layout_marginRight="20dp" />
+         android:layout_marginRight="20dp"
+         android:layout_marginTop="10dp" />
 
      <Button
          android:layout_width="wrap_content"
