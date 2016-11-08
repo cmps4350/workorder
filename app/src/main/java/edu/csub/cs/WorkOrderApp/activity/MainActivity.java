@@ -3,7 +3,6 @@
  * */
 package edu.csub.cs.WorkOrderApp.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 		txtName = (TextView) findViewById(R.id.name);
 		btnLogout = (Button) findViewById(R.id.btnLogout);
         btnNewWorkorder = (Button) findViewById(R.id.btnNewWorkOrder);
-		btnCompleteOrder = (Button) findViewById(R.id.btnComplete);
+		btnCompleteOrder = (Button) findViewById(R.id.btnViewWorkOrder);
 
 		// SqLite database handler
 		db = new SQLiteHandler(getApplicationContext());

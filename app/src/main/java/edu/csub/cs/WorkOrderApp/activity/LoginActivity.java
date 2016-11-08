@@ -3,7 +3,6 @@
  * */
 package edu.csub.cs.WorkOrderApp.activity;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,11 +24,11 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import edu.csub.cs.WorkOrderApp.R;
 import edu.csub.cs.WorkOrderApp.app.AppConfig;
+import edu.csub.cs.WorkOrderApp.app.AppController;
 import edu.csub.cs.WorkOrderApp.helper.SQLiteHandler;
 import edu.csub.cs.WorkOrderApp.helper.SessionManager;
-import edu.csub.cs.WorkOrderApp.R;
-import edu.csub.cs.WorkOrderApp.app.AppController;
 
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
