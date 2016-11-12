@@ -40,8 +40,9 @@ public class LandingPage extends AppCompatActivity {
     private static final String TAG = RegisterActivity.class.getSimpleName();
     private Button btn_landing;
     private ProgressDialog pDialog;
-
+    public EquipmentHolder[] equipments;
     public static List<String> equipment = new ArrayList<String>();
+    public static List<EquipmentHolder> equipment2 = new ArrayList<EquipmentHolder>();
     public static List<String> priority = new ArrayList<String>();
     public static List<String> room = new ArrayList<String>();
     public static List<String> type = new ArrayList<String>();
@@ -63,7 +64,7 @@ public class LandingPage extends AppCompatActivity {
                 "Starting Facility Maintenance Reporter", Toast.LENGTH_LONG)
                 .show();
         btn_landing = (Button) findViewById(R.id.btn_landing);
-
+        //equipment2.add(new EquipmentHolder(25,"Testing"));
         Thread timerThread = new Thread(){
             public void run(){
                 try{
@@ -92,6 +93,7 @@ public class LandingPage extends AppCompatActivity {
         get_data(URL_ROOM,room);
         get_data(URL_EQUIPMENT,equipment);
         get_data(URL_TYPE,type);
+        get_equipment(URL_EQUIPMENT, equipment2);
     }
 
     private void get_data(String url, final List list) {
@@ -144,6 +146,60 @@ public class LandingPage extends AppCompatActivity {
 
     }
 
+
+    private void get_equipment(String url, final List<EquipmentHolder> list) {
+        pDialog.setMessage("Loading data ...");
+        showDialog();
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                hideDialog();
+                try {
+                    JSONArray jObj = new JSONArray(response);
+                    equipments = new EquipmentHolder[jObj.length()];
+                    JSONObject json= null;
+                    final String[] name = new String[jObj.length()];
+                    final int[] id = new int[jObj.length()];
+                    for(int i=0;i<jObj.length(); i++){
+                        json = jObj.getJSONObject(i);
+                        name[i] = json.getString("name");
+                        id[i] = json.getInt("room_id");
+
+                    }
+                    if (equipment2.isEmpty()) {
+                        for (int i = 0; i < name.length; i++) {
+                            list.add(new EquipmentHolder(id[i], name[i] ));
+                        }
+                    }
+
+                } catch (JSONException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                hideDialog();
+                Toast.makeText(LandingPage.this, "Failure getting data from server", Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<String, String>();
+                map.put("verify", "4350");
+
+                return map;
+            }
+        };
+        requestQueue.add(strReq);
+
+    }
 
     private void showDialog() {
         if (!pDialog.isShowing())

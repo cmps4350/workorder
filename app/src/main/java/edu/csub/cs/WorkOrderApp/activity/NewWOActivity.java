@@ -46,8 +46,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import edu.csub.cs.WorkOrderApp.R;
@@ -56,6 +58,7 @@ import edu.csub.cs.WorkOrderApp.helper.SQLiteHandler;
 
 import static edu.csub.cs.WorkOrderApp.R.drawable.camera;
 import static edu.csub.cs.WorkOrderApp.R.drawable.plus;
+import static edu.csub.cs.WorkOrderApp.activity.LandingPage.equipment2;
 
 
 public class NewWOActivity extends AppCompatActivity{
@@ -92,6 +95,7 @@ public class NewWOActivity extends AppCompatActivity{
     int selected_problem;
     private String eid;
     private String description;
+    public static List<EquipmentHolder> temp = new ArrayList<EquipmentHolder>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -146,8 +150,8 @@ public class NewWOActivity extends AppCompatActivity{
         area.setAdapter(dataAdapter2);*/
 
         // Equipment
-        ArrayAdapter<String> dataAdapter3 = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item, LandingPage.equipment);
+        ArrayAdapter<EquipmentHolder> dataAdapter3 = new ArrayAdapter<EquipmentHolder>(this,
+                android.R.layout.simple_spinner_dropdown_item, equipment2);
         dataAdapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         equipment.setAdapter(dataAdapter3);
 
@@ -310,8 +314,18 @@ public class NewWOActivity extends AppCompatActivity{
             public void onItemSelected(AdapterView<?> arg0, View arg1,
                                        int arg2, long arg3) {
                 // TODO Auto-generated method stub
-
+                temp = new ArrayList<EquipmentHolder>();
                 selected_building = arg2+1;
+                Toast.makeText(NewWOActivity.this, selected_building+"", Toast.LENGTH_SHORT).show();
+                for (int i = 0; i < equipment2.size(); i++ ) {
+                    if (equipment2.get(i).getId() == selected_building) {
+                        temp.add(new EquipmentHolder(equipment2.get(i).getId(), equipment2.get(i).getName()));
+                    }
+                }
+                ArrayAdapter<EquipmentHolder> newEquipment = new ArrayAdapter<EquipmentHolder>(NewWOActivity.this,
+                        android.R.layout.simple_spinner_dropdown_item, temp);
+                newEquipment.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                equipment.setAdapter(newEquipment);
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
@@ -325,9 +339,8 @@ public class NewWOActivity extends AppCompatActivity{
             public void onItemSelected(AdapterView<?> arg0, View arg1,
                                        int arg2, long arg3) {
                 // TODO Auto-generated method stub
-
-                selected_equipment = arg2+1;
-
+                EquipmentHolder s = (EquipmentHolder) arg0.getItemAtPosition(arg2);
+                selected_equipment = s.getId();
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
