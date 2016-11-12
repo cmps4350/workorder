@@ -91,7 +91,6 @@ public class LandingPage extends AppCompatActivity {
 
         get_data(URL_PRIORITY,priority);
         get_data(URL_ROOM,room);
-        get_data(URL_EQUIPMENT,equipment);
         get_data(URL_TYPE,type);
         get_equipment(URL_EQUIPMENT, equipment2);
     }
@@ -164,15 +163,17 @@ public class LandingPage extends AppCompatActivity {
                     JSONObject json= null;
                     final String[] name = new String[jObj.length()];
                     final int[] id = new int[jObj.length()];
+                    final int[] room_id = new int[jObj.length()];
                     for(int i=0;i<jObj.length(); i++){
                         json = jObj.getJSONObject(i);
                         name[i] = json.getString("name");
-                        id[i] = json.getInt("room_id");
+                        id[i] = json.getInt("id");
+                        room_id[i] = json.getInt("room_id");
 
                     }
                     if (equipment2.isEmpty()) {
                         for (int i = 0; i < name.length; i++) {
-                            list.add(new EquipmentHolder(id[i], name[i] ));
+                            list.add(new EquipmentHolder(id[i], room_id[i],  name[i] ));
                         }
                     }
 

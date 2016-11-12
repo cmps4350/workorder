@@ -316,10 +316,10 @@ public class NewWOActivity extends AppCompatActivity{
                 // TODO Auto-generated method stub
                 temp = new ArrayList<EquipmentHolder>();
                 selected_building = arg2+1;
-                Toast.makeText(NewWOActivity.this, selected_building+"", Toast.LENGTH_SHORT).show();
+
                 for (int i = 0; i < equipment2.size(); i++ ) {
-                    if (equipment2.get(i).getId() == selected_building) {
-                        temp.add(new EquipmentHolder(equipment2.get(i).getId(), equipment2.get(i).getName()));
+                    if (equipment2.get(i).getRoomId() == selected_building) {
+                        temp.add(new EquipmentHolder(equipment2.get(i).getId(), equipment2.get(i).getRoomId(), equipment2.get(i).getName()));
                     }
                 }
                 ArrayAdapter<EquipmentHolder> newEquipment = new ArrayAdapter<EquipmentHolder>(NewWOActivity.this,
@@ -341,6 +341,7 @@ public class NewWOActivity extends AppCompatActivity{
                 // TODO Auto-generated method stub
                 EquipmentHolder s = (EquipmentHolder) arg0.getItemAtPosition(arg2);
                 selected_equipment = s.getId();
+                Toast.makeText(NewWOActivity.this, selected_equipment+"", Toast.LENGTH_SHORT).show();
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
