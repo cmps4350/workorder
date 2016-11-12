@@ -341,7 +341,6 @@ public class NewWOActivity extends AppCompatActivity{
                 // TODO Auto-generated method stub
                 EquipmentHolder s = (EquipmentHolder) arg0.getItemAtPosition(arg2);
                 selected_equipment = s.getId();
-                Toast.makeText(NewWOActivity.this, selected_equipment+"", Toast.LENGTH_SHORT).show();
             }
 
             public void onNothingSelected(AdapterView<?> arg0) {
