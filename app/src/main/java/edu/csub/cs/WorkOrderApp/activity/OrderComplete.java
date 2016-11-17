@@ -23,6 +23,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -63,10 +64,18 @@ public class OrderComplete extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3)
             {
-                Intent i = new Intent(getApplicationContext(),
-                        WODetailActivity.class);
+                // get data information and store inside an object to pass
+                WorkOrderHolder s = (WorkOrderHolder) arg0.getItemAtPosition(position);
+
+                // new intent
+                Intent i = new Intent(OrderComplete.this, WODetailActivity.class);
+
+                // adding the object to be pass to new intent
+                i.putExtra("Info",(Serializable) s);
+
+                // new intent
                 startActivity(i);
-                //Toast.makeText(OrderComplete.this, "" + position, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(OrderComplete.this, "" + s.getArea(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -88,6 +97,8 @@ public class OrderComplete extends AppCompatActivity {
                     JSONArray jObj = new JSONArray(response);
                     //workorderlist = new WorkOrderHolder[jObj.length()];
                     JSONObject json= null;
+
+                    // creating temporary string arrays to store data from server
                     final String[] name = new String[jObj.length()];
                     final int[] id = new int[jObj.length()];
                     final String[] areas = new String[jObj.length()];
@@ -95,6 +106,7 @@ public class OrderComplete extends AppCompatActivity {
                     final String[] dates = new String[jObj.length()];
                     final String[] status = new String[jObj.length()];
                     final String[] priority = new String[jObj.length()];
+                    // storing data from server
                     for(int i=0;i<jObj.length(); i++){
                         json = jObj.getJSONObject(i);
                         equipments[i] = json.getString("equipment_name");
@@ -104,12 +116,17 @@ public class OrderComplete extends AppCompatActivity {
                         status[i] = json.getString("status_name");
                         priority[i] = json.getString("priority_name");
                     }
+
+                    // populating the array list
                     if (workorderlist.isEmpty()) {
                         for (int i = 0; i < name.length; i++) {
                             list.add(new WorkOrderHolder(id[i], areas[i], equipments[i], status[i], priority[i], dates[i] ));
                         }
                     }
+
+                    // refresh adapter after data is populated
                     listAdapter.notifyDataSetChanged();
+
                 } catch (JSONException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

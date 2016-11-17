@@ -1,10 +1,12 @@
 package edu.csub.cs.WorkOrderApp.activity;
 
+import java.io.Serializable;
+
 /**
  * Created by Ponism on 11/15/2016.
  */
 
-public class WorkOrderHolder {
+public class WorkOrderHolder implements Serializable {
     private int wo_id;
     private String area;
     private String equipment;
