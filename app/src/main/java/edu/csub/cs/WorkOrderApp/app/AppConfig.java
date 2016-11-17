@@ -12,4 +12,5 @@ public class AppConfig {
 	public static String URL_TYPE = "http://5.39.77.29/functions/get_type.php";
 	public static String URL_PRIORITY = "http://5.39.77.29/functions/get_priority.php";
 	public static String URL_EQUIPMENT = "http://5.39.77.29/functions/get_equipment.php";
+	public static String URL_VIEW = "http://5.39.77.29/functions/get_view.php";
 }

@@ -1,29 +1,34 @@
 package edu.csub.cs.WorkOrderApp.activity;
 
-import android.content.ContentValues;
-import android.content.DialogInterface;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.UnknownFormatConversionException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import edu.csub.cs.WorkOrderApp.R;
-import edu.csub.cs.WorkOrderApp.activity.FakeDB.OrderContract;
 import edu.csub.cs.WorkOrderApp.activity.FakeDB.OrderDBHelper;
+
+import static edu.csub.cs.WorkOrderApp.app.AppConfig.URL_VIEW;
 
 public class OrderComplete extends AppCompatActivity {
 
@@ -31,8 +36,9 @@ public class OrderComplete extends AppCompatActivity {
     private OrderDBHelper mHelper;
     private ListView mOrderList;
     private ArrayAdapter<String> mAdapter;
-
-
+    private ProgressDialog pDialog;
+    public static List<WorkOrderHolder> workorderlist = new ArrayList<WorkOrderHolder>();
+    private WOFeedListAdapter listAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,87 +49,91 @@ public class OrderComplete extends AppCompatActivity {
 
         mHelper = new OrderDBHelper(this);
         mOrderList = (ListView) findViewById(R.id.list_todo);
-        UpdateUI();
+        pDialog = new ProgressDialog(this);
+        pDialog.setCancelable(false);
+        get_workorder(URL_VIEW,workorderlist);
+        listAdapter = new WOFeedListAdapter(this, workorderlist);
+        mOrderList.setAdapter(listAdapter);
 
+    }
+
+
+    private void get_workorder(String url, final List<WorkOrderHolder> list) {
+        pDialog.setMessage("Loading data ...");
+        showDialog();
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        StringRequest strReq = new StringRequest(Request.Method.POST,
+                url, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                hideDialog();
+                try {
+                    JSONArray jObj = new JSONArray(response);
+                    //workorderlist = new WorkOrderHolder[jObj.length()];
+                    JSONObject json= null;
+                    final String[] name = new String[jObj.length()];
+                    final int[] id = new int[jObj.length()];
+                    final String[] areas = new String[jObj.length()];
+                    final String[] equipments = new String[jObj.length()];
+                    final String[] dates = new String[jObj.length()];
+                    final String[] status = new String[jObj.length()];
+                    final String[] priority = new String[jObj.length()];
+                    for(int i=0;i<jObj.length(); i++){
+                        json = jObj.getJSONObject(i);
+                        equipments[i] = json.getString("equipment_name");
+                        dates[i] = json.getString("created_date");
+                        areas[i] = json.getString("room_name");
+                        id[i] = json.getInt("id");
+                        status[i] = json.getString("status_name");
+                        priority[i] = json.getString("priority_name");
+                    }
+                    if (workorderlist.isEmpty()) {
+                        for (int i = 0; i < name.length; i++) {
+                            list.add(new WorkOrderHolder(id[i], areas[i], equipments[i], status[i], priority[i], dates[i] ));
+                        }
+                    }
+
+                } catch (JSONException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                hideDialog();
+                Toast.makeText(OrderComplete.this, "Failure getting data from server", Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String,String> map = new HashMap<String, String>();
+                map.put("verify", "4350");
+
+                return map;
+            }
+        };
+        requestQueue.add(strReq);
+
+    }
+
+    private void showDialog() {
+        if (!pDialog.isShowing())
+            pDialog.show();
+    }
+
+    private void hideDialog() {
+        if (pDialog.isShowing())
+            pDialog.dismiss();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.fake_menu, menu);
-        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.add_order:
-                final EditText orderEditText = new EditText(this);
-                AlertDialog dialog = new AlertDialog.Builder(this)
-                        .setTitle("Add a new task")
-                        .setMessage("What do you want to do next?")
-                        .setView(orderEditText)
-                        .setPositiveButton("Add", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String task = String.valueOf(orderEditText.getText());
-                                SQLiteDatabase db = mHelper.getWritableDatabase();
-                                ContentValues values = new ContentValues();
-                                values.put(OrderContract.TaskEntry.COL_TASK_TITLE, task);
-                                db.insertWithOnConflict(OrderContract.TaskEntry.TABLE,
-                                        null,
-                                        values,
-                                        SQLiteDatabase.CONFLICT_REPLACE);
-                                UpdateUI();
-                                db.close();
-                            }
-                        })
-                        .setNegativeButton("Cancel", null)
-                        .create();
-                dialog.show();
-                return true;
-
-            default:
-                UpdateUI();
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    private void UpdateUI() {
-        ArrayList<String> taskList = new ArrayList<>();
-        SQLiteDatabase db = mHelper.getReadableDatabase();
-        Cursor cursor = db.query(OrderContract.TaskEntry.TABLE,
-                new String[]{OrderContract.TaskEntry._ID, OrderContract.TaskEntry.COL_TASK_TITLE},
-                null, null, null, null, null);
-        while (cursor.moveToNext()) {
-            int idx = cursor.getColumnIndex(OrderContract.TaskEntry.COL_TASK_TITLE);
-            taskList.add(cursor.getString(idx));
-        }
-
-        if (mAdapter == null) {
-            mAdapter = new ArrayAdapter<>(this,
-                    R.layout.order_list,
-                    R.id.task_title,
-                    taskList);
-            mOrderList.setAdapter(mAdapter);
-        } else {
-            mAdapter.clear();
-            mAdapter.addAll(taskList);
-            mAdapter.notifyDataSetChanged();
-        }
-
-        cursor.close();
-        db.close();
-    }
-
-    public void deleteTask(View view){
-        View parent = (View) view.getParent();
-        TextView taskTextView = (TextView) parent.findViewById(R.id.task_title);
-        String task = String.valueOf(taskTextView.getText());
-        SQLiteDatabase db = mHelper.getWritableDatabase();
-        db.delete(OrderContract.TaskEntry.TABLE,
-                OrderContract.TaskEntry.COL_TASK_TITLE + " = ?",
-                new String[]{task});
-        db.close();
-        UpdateUI();
-    }
 }
