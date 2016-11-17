@@ -2263,14 +2263,14 @@ containing a value of this type.
         public static final int action_bar_title=0x7f0b003a;
         public static final int action_context_bar=0x7f0b005b;
         public static final int action_divider=0x7f0b0094;
-        public static final int action_favorite=0x7f0b00a1;
+        public static final int action_favorite=0x7f0b00aa;
         public static final int action_menu_divider=0x7f0b0002;
         public static final int action_menu_presenter=0x7f0b0003;
         public static final int action_mode_bar=0x7f0b0057;
         public static final int action_mode_bar_stub=0x7f0b0056;
         public static final int action_mode_close_button=0x7f0b003c;
         public static final int activity_chooser_view_content=0x7f0b003d;
-        public static final int add_order=0x7f0b00a0;
+        public static final int add_order=0x7f0b00a9;
         public static final int alertTitle=0x7f0b0049;
         public static final int always=0x7f0b0032;
         public static final int beginning=0x7f0b0030;
@@ -2282,6 +2282,8 @@ containing a value of this type.
         public static final int btnNewWorkOrder=0x7f0b0070;
         public static final int btnRegister=0x7f0b0084;
         public static final int btnViewWorkOrder=0x7f0b0071;
+        public static final int btn_back=0x7f0b00a7;
+        public static final int btn_complete=0x7f0b00a8;
         public static final int btn_landing=0x7f0b008f;
         public static final int btn_takepicture=0x7f0b0083;
         public static final int buttonPanel=0x7f0b0044;
@@ -2296,7 +2298,9 @@ containing a value of this type.
         public static final int cogs=0x7f0b008e;
         public static final int collapseActionView=0x7f0b0033;
         public static final int contentPanel=0x7f0b004a;
+        public static final int created_by=0x7f0b00a2;
         public static final int created_date=0x7f0b009f;
+        public static final int created_on=0x7f0b00a1;
         public static final int custom=0x7f0b0050;
         public static final int customPanel=0x7f0b004f;
         public static final int decor_content_parent=0x7f0b0058;
@@ -2414,6 +2418,11 @@ containing a value of this type.
         public static final int view_offset_helper=0x7f0b000a;
         public static final int welcome=0x7f0b006d;
         public static final int withText=0x7f0b0036;
+        public static final int wo_area=0x7f0b00a3;
+        public static final int wo_equipment=0x7f0b00a4;
+        public static final int wo_no=0x7f0b00a0;
+        public static final int wo_priority=0x7f0b00a5;
+        public static final int wo_status=0x7f0b00a6;
         public static final int wrap_content=0x7f0b0039;
     }
     public static final class integer {

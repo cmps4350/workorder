@@ -13,10 +13,11 @@ public class WorkOrderHolder implements Serializable {
     private String status;
     private String priority;
     private String create_date;
+    private String emp;
     public WorkOrderHolder() {
     }
 
-    public WorkOrderHolder(int id, String area, String equipment, String status, String priority, String create_date) {
+    public WorkOrderHolder(int id, String area, String equipment, String status, String priority, String create_date, String emp) {
         super();
         this.wo_id = id;
         this.area = area;
@@ -24,6 +25,7 @@ public class WorkOrderHolder implements Serializable {
         this.status = status;
         this.priority = priority;
         this.create_date = create_date;
+        this.emp = emp;
     }
 
     @Override
@@ -37,7 +39,9 @@ public class WorkOrderHolder implements Serializable {
     public String getPriority() { return priority;}
     public String getCreateDate() { return create_date;}
     public String getId() { return wo_id+"";}
+    public String getEmp() { return emp+""; }
 
+    public void setEmp(String emp) { this.emp = emp; }
     public void setCreateDate(String date) { this.create_date = date;}
     public void setArea(String name) { this.area = name;}
     public void setEquipment(String equipment) { this.equipment = equipment; }

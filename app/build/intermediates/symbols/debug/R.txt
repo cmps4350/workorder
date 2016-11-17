@@ -617,14 +617,14 @@ int id action_bar_subtitle 0x7f0b003b
 int id action_bar_title 0x7f0b003a
 int id action_context_bar 0x7f0b005b
 int id action_divider 0x7f0b0094
-int id action_favorite 0x7f0b00a1
+int id action_favorite 0x7f0b00aa
 int id action_menu_divider 0x7f0b0002
 int id action_menu_presenter 0x7f0b0003
 int id action_mode_bar 0x7f0b0057
 int id action_mode_bar_stub 0x7f0b0056
 int id action_mode_close_button 0x7f0b003c
 int id activity_chooser_view_content 0x7f0b003d
-int id add_order 0x7f0b00a0
+int id add_order 0x7f0b00a9
 int id alertTitle 0x7f0b0049
 int id always 0x7f0b0032
 int id beginning 0x7f0b0030
@@ -636,6 +636,8 @@ int id btnLogout 0x7f0b0072
 int id btnNewWorkOrder 0x7f0b0070
 int id btnRegister 0x7f0b0084
 int id btnViewWorkOrder 0x7f0b0071
+int id btn_back 0x7f0b00a7
+int id btn_complete 0x7f0b00a8
 int id btn_landing 0x7f0b008f
 int id btn_takepicture 0x7f0b0083
 int id buttonPanel 0x7f0b0044
@@ -650,7 +652,9 @@ int id clip_vertical 0x7f0b002c
 int id cogs 0x7f0b008e
 int id collapseActionView 0x7f0b0033
 int id contentPanel 0x7f0b004a
+int id created_by 0x7f0b00a2
 int id created_date 0x7f0b009f
+int id created_on 0x7f0b00a1
 int id custom 0x7f0b0050
 int id customPanel 0x7f0b004f
 int id decor_content_parent 0x7f0b0058
@@ -768,6 +772,11 @@ int id view2 0x7f0b0080
 int id view_offset_helper 0x7f0b000a
 int id welcome 0x7f0b006d
 int id withText 0x7f0b0036
+int id wo_area 0x7f0b00a3
+int id wo_equipment 0x7f0b00a4
+int id wo_no 0x7f0b00a0
+int id wo_priority 0x7f0b00a5
+int id wo_status 0x7f0b00a6
 int id wrap_content 0x7f0b0039
 int integer abc_config_activityDefaultDur 0x7f090002
 int integer abc_config_activityShortDur 0x7f090003

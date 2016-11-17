@@ -50,6 +50,9 @@ public class OrderComplete extends AppCompatActivity {
         getSupportActionBar().setLogo(R.drawable.cogs_icon);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         setContentView(R.layout.activity_order_complete);
+        // reset workorder list
+        if (!workorderlist.isEmpty())
+            workorderlist = new ArrayList<WorkOrderHolder>();
 
         mHelper = new OrderDBHelper(this);
         mOrderList = (ListView) findViewById(R.id.list_todo);
@@ -106,6 +109,7 @@ public class OrderComplete extends AppCompatActivity {
                     final String[] dates = new String[jObj.length()];
                     final String[] status = new String[jObj.length()];
                     final String[] priority = new String[jObj.length()];
+                    final String[] emp = new String[jObj.length()];
                     // storing data from server
                     for(int i=0;i<jObj.length(); i++){
                         json = jObj.getJSONObject(i);
@@ -115,12 +119,13 @@ public class OrderComplete extends AppCompatActivity {
                         id[i] = json.getInt("id");
                         status[i] = json.getString("status_name");
                         priority[i] = json.getString("priority_name");
+                        emp[i] = json.getString("name");
                     }
 
                     // populating the array list
                     if (workorderlist.isEmpty()) {
                         for (int i = 0; i < name.length; i++) {
-                            list.add(new WorkOrderHolder(id[i], areas[i], equipments[i], status[i], priority[i], dates[i] ));
+                            list.add(new WorkOrderHolder(id[i], areas[i], equipments[i], status[i], priority[i], dates[i], emp[i] ));
                         }
                     }
 
