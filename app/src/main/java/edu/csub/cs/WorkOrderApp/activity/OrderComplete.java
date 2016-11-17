@@ -1,9 +1,12 @@
 package edu.csub.cs.WorkOrderApp.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -51,9 +54,21 @@ public class OrderComplete extends AppCompatActivity {
         mOrderList = (ListView) findViewById(R.id.list_todo);
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
-        get_workorder(URL_VIEW,workorderlist);
         listAdapter = new WOFeedListAdapter(this, workorderlist);
         mOrderList.setAdapter(listAdapter);
+        get_workorder(URL_VIEW,workorderlist);
+
+        mOrderList.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3)
+            {
+                Intent i = new Intent(getApplicationContext(),
+                        WODetailActivity.class);
+                startActivity(i);
+                //Toast.makeText(OrderComplete.this, "" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -94,7 +109,7 @@ public class OrderComplete extends AppCompatActivity {
                             list.add(new WorkOrderHolder(id[i], areas[i], equipments[i], status[i], priority[i], dates[i] ));
                         }
                     }
-
+                    listAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

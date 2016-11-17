@@ -56,6 +56,10 @@
         "source": "D:\\4350\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.1.1\\res\\layout\\design_navigation_item_subheader.xml"
     },
     {
+        "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\workorder_detail.xml",
+        "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\src\\main\\res\\layout\\workorder_detail.xml"
+    },
+    {
         "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
         "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\src\\main\\res\\layout\\activity_register.xml"
     },
@@ -76,12 +80,12 @@
         "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\src\\main\\res\\layout\\landing_page.xml"
     },
     {
-        "merged": "D:\\4350\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "D:\\4350\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
         "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
         "source": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "D:\\4350\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\4350\\workorder\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "C:\\Users\\Ponism\\Documents\\GitHub\\workorder\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",

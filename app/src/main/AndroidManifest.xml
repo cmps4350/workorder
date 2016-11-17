@@ -37,6 +37,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.WODetailActivity"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
             android:name=".activity.LoginActivity"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan"></activity>
