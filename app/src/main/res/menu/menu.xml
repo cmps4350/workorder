@@ -6,7 +6,17 @@
             android:id="@+id/action_favorite"
             android:icon="@drawable/cogs_icon"
             android:title="@string/app_name"
-             />
+            />
+        <item
+            android:id="@+id/order_no"
+            android:icon="@drawable/cogs_icon"
+            android:title="New Menu Item"
+            />
+        <item
+            android:id="@+id/expanded_menu"
+            android:icon="@drawable/cogs_icon"
+            android:title="Idk what you want here :P"
+            />
 
         <!-- Settings, should always be in the overflow -->
 
