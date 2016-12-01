@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,7 +33,9 @@ import java.util.Map;
 import edu.csub.cs.WorkOrderApp.R;
 import edu.csub.cs.WorkOrderApp.activity.FakeDB.OrderDBHelper;
 
-import static edu.csub.cs.WorkOrderApp.app.AppConfig.URL_VIEW;
+import static edu.csub.cs.WorkOrderApp.app.AppConfig.URL_VIEW_COMPLETE;
+import static edu.csub.cs.WorkOrderApp.app.AppConfig.URL_VIEW_ONGOING;
+import static edu.csub.cs.WorkOrderApp.app.AppConfig.URL_VIEW_PENDING;
 
 public class OrderComplete extends AppCompatActivity {
 
@@ -43,6 +46,8 @@ public class OrderComplete extends AppCompatActivity {
     private ProgressDialog pDialog;
     public static List<WorkOrderHolder> workorderlist = new ArrayList<WorkOrderHolder>();
     private WOFeedListAdapter listAdapter;
+    boolean ongoing = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +65,7 @@ public class OrderComplete extends AppCompatActivity {
         pDialog.setCancelable(false);
         listAdapter = new WOFeedListAdapter(this, workorderlist);
         mOrderList.setAdapter(listAdapter);
-        get_workorder(URL_VIEW,workorderlist);
+        get_workorder(URL_VIEW_ONGOING,workorderlist);
 
         mOrderList.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
@@ -71,7 +76,11 @@ public class OrderComplete extends AppCompatActivity {
                 WorkOrderHolder s = (WorkOrderHolder) arg0.getItemAtPosition(position);
 
                 // new intent
-                Intent i = new Intent(OrderComplete.this, WODetailActivity.class);
+                Intent i;
+                if (ongoing)
+                    i = new Intent(OrderComplete.this, WODetailActivity.class);
+                else
+                    i = new Intent(OrderComplete.this, WODetailActivity2.class);
 
                 // adding the object to be pass to new intent
                 i.putExtra("Info",(Serializable) s);
@@ -81,9 +90,31 @@ public class OrderComplete extends AppCompatActivity {
                 //Toast.makeText(OrderComplete.this, "" + s.getArea(), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 
+    public boolean loadComplete(MenuItem item) {
+        if (!workorderlist.isEmpty())
+            workorderlist.clear();
+        get_workorder(URL_VIEW_COMPLETE,workorderlist);
+        ongoing = false;
+        return true;
+    }
+
+    public boolean loadPending(MenuItem item) {
+       if (!workorderlist.isEmpty())
+            workorderlist.clear();
+        get_workorder(URL_VIEW_PENDING,workorderlist);
+        ongoing = false;
+        return true;
+    }
+
+    public boolean loadOngoing(MenuItem item) {
+        if (!workorderlist.isEmpty())
+            workorderlist.clear();
+        get_workorder(URL_VIEW_ONGOING,workorderlist);
+        ongoing = true;
+        return true;
+    }
 
     private void get_workorder(String url, final List<WorkOrderHolder> list) {
         pDialog.setMessage("Loading data ...");
@@ -110,6 +141,7 @@ public class OrderComplete extends AppCompatActivity {
                     final String[] status = new String[jObj.length()];
                     final String[] priority = new String[jObj.length()];
                     final String[] emp = new String[jObj.length()];
+                    final String[] description = new String[jObj.length()];
                     // storing data from server
                     for(int i=0;i<jObj.length(); i++){
                         json = jObj.getJSONObject(i);
@@ -120,16 +152,18 @@ public class OrderComplete extends AppCompatActivity {
                         status[i] = json.getString("status_name");
                         priority[i] = json.getString("priority_name");
                         emp[i] = json.getString("name");
+                        description[i] = json.getString("problem_description");
                     }
 
                     // populating the array list
                     if (workorderlist.isEmpty()) {
                         for (int i = 0; i < name.length; i++) {
-                            list.add(new WorkOrderHolder(id[i], areas[i], equipments[i], status[i], priority[i], dates[i], emp[i] ));
+                            list.add(new WorkOrderHolder(id[i], areas[i], equipments[i], status[i], priority[i], dates[i], emp[i], description[i] ));
                         }
                     }
 
                     // refresh adapter after data is populated
+
                     listAdapter.notifyDataSetChanged();
 
                 } catch (JSONException e) {

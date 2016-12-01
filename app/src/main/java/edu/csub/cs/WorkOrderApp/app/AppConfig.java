@@ -12,5 +12,8 @@ public class AppConfig {
 	public static String URL_TYPE = "http://5.39.77.29/functions/get_type.php";
 	public static String URL_PRIORITY = "http://5.39.77.29/functions/get_priority.php";
 	public static String URL_EQUIPMENT = "http://5.39.77.29/functions/get_equipment.php";
-	public static String URL_VIEW = "http://5.39.77.29/functions/get_view.php";
+	public static String URL_VIEW_ONGOING = "http://5.39.77.29/functions/get_ongoing.php";
+	public static String URL_VIEW_PENDING = "http://5.39.77.29/functions/get_pending.php";
+	public static String URL_VIEW_COMPLETE = "http://5.39.77.29/functions/get_complete.php";
+	public static String URL_SET_COMPLETE = "http://5.39.77.29/functions/set_complete.php";
 }

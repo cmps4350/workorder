@@ -36,6 +36,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="edu.csub.cs.WorkOrderApp.activity.WODetailActivity2"
+            android:launchMode="singleTop"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
             android:name="edu.csub.cs.WorkOrderApp.activity.WODetailActivity"
             android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan" />

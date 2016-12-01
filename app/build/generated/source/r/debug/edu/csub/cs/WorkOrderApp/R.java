@@ -2263,14 +2263,14 @@ containing a value of this type.
         public static final int action_bar_title=0x7f0b003a;
         public static final int action_context_bar=0x7f0b005b;
         public static final int action_divider=0x7f0b0094;
-        public static final int action_favorite=0x7f0b00aa;
+        public static final int action_favorite=0x7f0b00ab;
         public static final int action_menu_divider=0x7f0b0002;
         public static final int action_menu_presenter=0x7f0b0003;
         public static final int action_mode_bar=0x7f0b0057;
         public static final int action_mode_bar_stub=0x7f0b0056;
         public static final int action_mode_close_button=0x7f0b003c;
         public static final int activity_chooser_view_content=0x7f0b003d;
-        public static final int add_order=0x7f0b00a9;
+        public static final int add_order=0x7f0b00aa;
         public static final int alertTitle=0x7f0b0049;
         public static final int always=0x7f0b0032;
         public static final int beginning=0x7f0b0030;
@@ -2282,8 +2282,8 @@ containing a value of this type.
         public static final int btnNewWorkOrder=0x7f0b0070;
         public static final int btnRegister=0x7f0b0084;
         public static final int btnViewWorkOrder=0x7f0b0071;
-        public static final int btn_back=0x7f0b00a7;
-        public static final int btn_complete=0x7f0b00a8;
+        public static final int btn_back=0x7f0b00a8;
+        public static final int btn_complete=0x7f0b00a9;
         public static final int btn_landing=0x7f0b008f;
         public static final int btn_takepicture=0x7f0b0083;
         public static final int buttonPanel=0x7f0b0044;
@@ -2419,6 +2419,7 @@ containing a value of this type.
         public static final int welcome=0x7f0b006d;
         public static final int withText=0x7f0b0036;
         public static final int wo_area=0x7f0b00a3;
+        public static final int wo_description=0x7f0b00a7;
         public static final int wo_equipment=0x7f0b00a4;
         public static final int wo_no=0x7f0b00a0;
         public static final int wo_priority=0x7f0b00a5;
@@ -2491,6 +2492,7 @@ containing a value of this type.
         public static final int select_dialog_singlechoice_material=0x7f030036;
         public static final int support_simple_spinner_dropdown_item=0x7f030037;
         public static final int workorder_detail=0x7f030038;
+        public static final int workorder_detail2=0x7f030039;
     }
     public static final class menu {
         public static final int fake_menu=0x7f0c0000;
@@ -2546,15 +2548,8 @@ containing a value of this type.
         public static final int Animation_AppCompat_DropDownUp=0x7f080083;
         /**  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
          */
         public static final int AppBaseTheme=0x7f080005;
-        /**  All customizations that are NOT specific to a particular API-level can go here. 
-         */
         public static final int AppTheme=0x7f080084;
         public static final int Base_AlertDialog_AppCompat=0x7f080085;
         public static final int Base_AlertDialog_AppCompat_Light=0x7f080086;
